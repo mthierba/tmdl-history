@@ -1,0 +1,83 @@
+table Info
+	ordinal: 3
+
+	partition 'Info-f44d74ec-0372-4982-8ace-63656474683c' = M
+		mode: Import
+		expression:=
+			let
+			    Source = #table(type table
+			    [
+			        #"Label"             = text, 
+			        #"Timestamp"         = datetime,
+			        #"Text"              = text
+			    ], 
+			    {
+			        { "Data Updated", DateTimeZone.RemoveZone(DateTimeZone.UtcNow()), null },
+			        { "Version",            null,   #"[Version]" },
+			        { "Branch",             null,   #"[CI-Branch]" },
+			        { "Commit ID",          null,   #"[CI-Commit]" },
+			        { "Build Number",       null,   #"[CI-BuildNumber]" },
+			        { "Build Reason",       null,   #"[CI-BuildReason]" },
+			        { "pbi-tools Version",  null,   #"[PBITOOLS_VERSION]" },
+			        { "Environment",        null,   #"[Environment]"}
+			    }
+			)
+			in
+			    Source
+
+
+	measure Branch = LOOKUPVALUE(Info[Text], Info[Label], "Branch")
+
+	measure 'Data Updated (UTC)' = LOOKUPVALUE(Info[Timestamp], Info[Label], "Data Updated")
+		formatString:= dd-mmm-yyyy hh:mm
+
+	measure 'Dataset Version' = LOOKUPVALUE(Info[Text], Info[Label], "Version")
+
+	measure Environment = LOOKUPVALUE(Info[Text], Info[Label], "Environment")
+
+	measure 'Build Number' = LOOKUPVALUE(Info[Text], Info[Label], "Build Number")
+
+	measure 'Build Reason' = LOOKUPVALUE(Info[Text], Info[Label], "Build Reason")
+
+	measure 'Commit ID' = LOOKUPVALUE(Info[Text], Info[Label], "Commit ID")
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This is my "Hello World"
+	/// measure.
+	measure 'Hello World' = "Hello World"
+
+	column Label
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Label
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
+
+	column Text
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Text
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
+
+	column Timestamp
+		dataType: DateTime
+		formatString:= General Date
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Timestamp
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
+

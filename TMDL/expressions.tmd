@@ -1,0 +1,27 @@
+expression '[SourceUrl]' = "https://raw.githubusercontent.com/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+	queryGroup: Parameters
+
+expression '[Version]' = "VERSION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[CI-Branch]' = "CI-Branch" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[CI-Commit]' = "CI-Commit" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[CI-BuildNumber]' = "CI-BuildNumber" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[CI-BuildReason]' = "CI-BuildReason" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[Environment]' = "ENVIRONMENT" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+
+expression '[FilterDate]' = #date(2009, 1, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=false]
+	queryGroup: Parameters
+
+expression '[PBITOOLS_VERSION]' = "PBITOOLS_VERSION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	queryGroup: Parameters
+

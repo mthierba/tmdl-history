@@ -1,0 +1,189 @@
+table Store
+	ordinal: 8
+
+	partition Store = M
+		mode: Import
+		expression:=
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Store.csv"]),
+			    Csv = Csv.Document(Source),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StoreKey", Int64.Type}, {"Store Type", type text}, {"Store Name", type text}, {"Status", type text}, {"Zip Code", type text}, {"Zip Code Extension", type text}, {"Store Phone", type text}, {"Continent", type text}, {"City", type text}, {"State", type text}, {"CountryRegion", type text}, {"Address Line 1", type text}, {"Address Line 2", type text}, {"Close Reason", type text}, {"Employees", Int64.Type}, {"Selling Area", type number}}),
+			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Open Date", each Date.From(DateTimeZone.From(_)), type date}, {"Close Date", each Date.From(DateTimeZone.From(_)), type date}, {"Last Remodel Date", each Date.From(DateTimeZone.From(_)), type date}})
+			in
+			    #"Parsed Date"
+
+
+	column 'Address Line 1'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Address Line 1"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 2'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Address Line 2"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataCategory: City
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: City
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Close Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Close Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Close Reason'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Close Reason"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continent
+		dataCategory: Continent
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Continent
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataCategory: Country
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: CountryRegion
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Number of active store employees
+	column Employees
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Employees
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last Remodel Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Last Remodel Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Open Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Open Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Selling Area'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: "Selling Area"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column State
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: State
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Status
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Name'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Store Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Phone'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Store Phone"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Type'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Store Type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: StoreKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Zip Code Extension'
+		dataCategory: PostalCode
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Zip Code Extension"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Zip Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+

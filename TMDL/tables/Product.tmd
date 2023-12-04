@@ -1,0 +1,90 @@
+table Product
+	ordinal: 5
+
+	partition Product = M
+		mode: Import
+		expression:=
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Product.csv"]),
+			    Csv = Csv.Document(Source),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}, {"Product Code", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Subcategory", type text}, {"Category", type text}, {"Color", type text}})
+			in
+			    #"Changed Type"
+
+
+	column Brand
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Brand
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Category
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Color
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Manufacturer
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Code'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Product Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Product Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: ProductKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Subcategory
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Subcategory
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Category-Subcategory'
+
+		level Category
+			column: Category
+
+		level Subcategory
+			column: Subcategory
+

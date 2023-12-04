@@ -1,0 +1,91 @@
+table Promotion
+	ordinal: 6
+
+	partition Promotion = M
+		mode: Import
+		expression:=
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Promotion.csv"]),
+			    Csv = Csv.Document(Source),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PromotionKey", Int64.Type}, {"Promotion Code", type text}, {"Promotion", type text}, {"Discount", type number}, {"Promotion Type", type text}, {"Promotion Category", type text}}),
+			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Start Date", each Date.From(DateTimeZone.From(_)), type date}, {"End Date", each Date.From(DateTimeZone.From(_)), type date}})
+			in
+			    #"Parsed Date"
+
+
+	column Discount
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Discount
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'End Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "End Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Promotion Category'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Promotion Category"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promotion Code'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Promotion Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promotion Type'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Promotion Type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Promotion
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Promotion
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: PromotionKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Start Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+

@@ -1,0 +1,24 @@
+model Model
+	compatibilityLevel: 1604
+	culture: en-US
+	dataAccessOptions:
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+	defaultPowerBIDataSourceVersion: PowerBI_V3
+	discourageImplicitMeasures
+	ID: b7d357fe-af44-4083-9e4d-2cb216640a3a
+	sourceQueryCulture: en-GB
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.106.883.0 (22.06)
+
+annotation PBI_QueryOrder = ["Product","Date","Customer","Promotion","Sales","Store","[SourceUrl]","Info","[Version]","[GH-SHA]","[GH-RunId]","[Environment]","[GH-Branch]","[FilterDate]","[PBITOOLS_VERSION]"]
+
+annotation TabularEditor_SerializeOptions = {"IgnoreInferredObjects":true,"IgnoreInferredProperties":true,"IgnoreTimestamps":true,"SplitMultilineStrings":true,"PrefixFilenames":false,"LocalTranslations":false,"LocalPerspectives":false,"LocalRelationships":false,"Levels":["Data Sources","Perspectives","Relationships","Roles","Shared Expressions","Tables","Tables/Calculation Items","Tables/Columns","Tables/Hierarchies","Tables/Measures","Tables/Partitions","Translations"],"AlsoSaveAsBim":true}
+

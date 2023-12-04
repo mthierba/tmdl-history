@@ -1,0 +1,6 @@
+dataSource 'Structured Data Source'
+	connectionDetails:
+		protocol: tds
+	credential:
+		authenticationKind: ServiceAccount
+

@@ -1,0 +1,37 @@
+table Metric
+	ordinal: 4
+
+	partition Partition = CalculationGroup
+		mode: Import
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem Margin = [Margin]
+
+		calculationItem 'Sales Amount' = [Sales Amount]
+
+		calculationItem 'Sales Quantity' = [Sales Quantity]
+
+			formatStringDefinition = "#,##0"
+
+		calculationItem 'Total Cost' = [Cost]
+
+	column Metric
+		dataType: String
+		isDataTypeInferred: false
+		sortByColumn: Ordinal
+		sourceColumn: Name
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Ordinal
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
