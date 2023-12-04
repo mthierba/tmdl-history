@@ -1,0 +1,13 @@
+role 'Role 1'
+
+	tablePermission Customer
+		metadataPermission: Read
+		table: Customer
+
+	tablePermission Product
+		metadataPermission: None
+		table: Product
+
+	tablePermission Date = [Calendar Year] > 2009
+		table: Date
+

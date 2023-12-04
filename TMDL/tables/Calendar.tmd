@@ -1,0 +1,124 @@
+table Calendar
+	dataCategory: Time
+	ordinal: 11
+
+	partition 'Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c' = Calculated
+		mode: Import
+		expression:=
+			VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )
+			VAR MaxYear = YEAR ( MAX ( Sales[Order Date] ) )
+			RETURN
+			ADDCOLUMNS ( 
+			    FILTER ( 
+			        CALENDARAUTO( ), 
+			        AND ( YEAR ( [Date] ) >= MinYear, YEAR ( [Date] ) <= MaxYear )
+			    ),
+			    "Calendar Year", "CY " & YEAR ( [Date] ),
+			    "Month Name", FORMAT ( [Date], "mmmm" ),
+			    "Month Number", MONTH ( [Date] ),
+				"Weekday", FORMAT ( [Date], "dddd" ),
+			    "Weekday number", WEEKDAY( [Date] ),
+			    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 12 ) + 1
+			) 
+
+
+	column Date
+		dataType: DateTime
+		formatString:= General Date
+		isDataTypeInferred: false
+		isKey
+		sourceColumn: [Date]
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="DateTimeGeneralPattern"><DateTimes><DateTime LCID="1033" Group="GeneralDateTimeLong" FormatString="G" /></DateTimes></Format>
+
+		annotation DataTypeAtRefresh = DateTime#####not a type
+
+	column 'Calendar Year'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "[Calendar Year]"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+	column 'Month Name'
+		dataType: String
+		isDataTypeInferred: false
+		sortByColumn: 'Month Number'
+		sourceColumn: "[Month Name]"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+	column 'Month Number'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		sourceColumn: "[Month Number]"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+	column Weekday
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: [Weekday]
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+	column 'Weekday number'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		sourceColumn: "[Weekday number]"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
+
+		annotation DataTypeAtRefresh = Int64#####not a type
+
+	column Quarter
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: [Quarter]
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation Format = <Format Format="Text" />
+
+		annotation DataTypeAtRefresh = String#####not a type
+
+	annotation PBI_Id = b6a086042fa54ad08adef743517ab23e
+
+	extendedProperty Json =
+		{
+		  "name": "SummarizationSetBy",
+		  "value": "Automatic"
+		}
+
+
+	extendedProperty String = Lorem ipsum
+

@@ -1,0 +1,233 @@
+table Customer
+	ordinal: 1
+
+	partition Customer = M
+		mode: Import
+		expression:=
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Customer.csv"]),
+			    Csv = Csv.Document(Source, [QuoteStyle=QuoteStyle.Csv]),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CustomerKey", Int64.Type}, {"Customer Code", type text}, {"Title", type text}, {"Name", type text}, {"Marital Status", type text}, {"Gender", type text}, {"Yearly Income", type number}, {"Total Children", Int64.Type}, {"Children At Home", Int64.Type}, {"Education", type text}, {"Occupation", type text}, {"House Ownership", type text}, {"Cars Owned", Int64.Type}, {"Continent", type text}, {"City", type text}, {"State", type text}, {"CountryRegion", type text}, {"Address Line 1", type text}, {"Address Line 2", type text}, {"Phone", type text}, {"Customer Type", type text}, {"Company Name", type text}}),
+			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Birth Date", each Date.From(DateTimeZone.From(_)), type date}, {"Date First Purchase", each Date.From(DateTimeZone.From(_)), type date}})
+			in
+			    #"Parsed Date"
+
+
+	column 'Address Line 1'
+		dataType: String
+		displayFolder: '"Folder 2!"'
+		isDataTypeInferred: false
+		sourceColumn: "Address Line 1"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 2'
+		dataType: String
+		displayFolder: "With Space "
+		isDataTypeInferred: false
+		sourceColumn: "Address Line 2"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Birth Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Birth Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Cars Owned'
+		dataType: Int64
+		displayFolder: ''Folder 1'\"Sub-Folder"'
+		isDataTypeInferred: false
+		sourceColumn: "Cars Owned"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Children At Home'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: "Children At Home"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column City
+		dataCategory: City
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: City
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Company Name"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continent
+		dataCategory: Continent
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Continent
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataCategory: Country
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: CountryRegion
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Code'
+		dataCategory: PostalCode
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Customer Code"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Type'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Customer Type"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: CustomerKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Date First Purchase'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		sourceColumn: "Date First Purchase"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Education
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Education
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Gender
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'House Ownership'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "House Ownership"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marital Status'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: "Marital Status"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Name
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Occupation
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Phone
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	/// The Customer State
+	/// 2nd line
+	column State
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: State
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Title
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Children'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: "Total Children"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Yearly Income'
+		dataType: Double
+		formatString:= #,0.00
+		isDataTypeInferred: false
+		sourceColumn: "Yearly Income"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+

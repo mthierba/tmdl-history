@@ -1,0 +1,296 @@
+table Sales
+	refreshPolicy:
+		incrementalGranularity: Day
+		incrementalPeriods: 7
+		rollingWindowGranularity: Year
+		rollingWindowPeriods: 5
+		sourceExpression:=
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Sales.csv"]),
+			    Csv = Csv.Document(Source),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StoreKey", Int64.Type}, {"ProductKey", Int64.Type}, {"PromotionKey", Int64.Type}, {"CurrencyKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"OrderDateKey", Int64.Type},{"Order Line Number", Int64.Type}, {"Quantity", Int64.Type}, {"Unit Price", type number}, {"Unit Discount", type number}, {"Unit Cost", type number}, {"Net Price", type number}}),
+			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Delivery Date", each Date.From(DateTimeZone.From(_)), type date}, {"Order Date", each Date.From(DateTimeZone.From(_)), type date}}),
+			    Filtered_Date = if #"[FilterDate]" = null then #"Parsed Date" else Table.SelectRows(#"Parsed Date", each [Order Date] >= #"[FilterDate]")
+			in
+			    Filtered_Date
+
+	ordinal: 7
+
+	partition 'Sales-fae7d1f1-9ede-41b7-b875-8dda67703e5e' = M
+		mode: Import
+
+	measure Margin = [Sales Amount] - [Cost]
+		formatString:= "$"#,0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+		detailRowsDefinition =
+			ADDCOLUMNS (
+			    NATURALINNERJOIN (
+			        DETAILROWS ( [Sales Amount] ),
+			        DETAILROWS ( [Cost] )
+			    ),
+			    "Line Margin", [Line Amount] - [Line Cost]
+			)
+
+
+	measure 'Sales Amount' = SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+		detailRowsDefinition =
+			SELECTCOLUMNS (
+			    Sales,
+			    "Order Date", Sales[Order Date],
+			    "Order Number", Sales[Order Number]
+			        & REPT ( "0", LEN ( Sales[Order Number] ) - 5 )
+			        & Sales[Order Number],
+			    "Order Line Number", Sales[Order Line Number],
+			    "Quantity", Sales[Quantity],
+			    "Net Price", Sales[Net Price],
+			    "Line Amount", Sales[Quantity] * Sales[Net Price],
+			    "Product Code", RELATED ( 'Product'[Product Code] ),
+			    "Product Name", RELATED ( 'Product'[Product Name] ),
+			    "Store Name", RELATED ( Store[Store Name] ),
+			    "Store City", RELATED ( Store[City] ),
+			    "Customer Code", RELATED ( Customer[Customer Code] ),
+			    "Customer Name", RELATED ( Customer[Name] )
+			)
+
+
+		formatStringDefinition =
+			IF ( SELECTEDMEASURE() <= 1E6, "#0,.00", "#0,,.00 M" )
+			
+
+
+	measure 'Sales Quantity' = SUM ( Sales[Quantity] )
+		formatString:= #,##0
+
+	measure Cost = SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )
+		formatString:= "$"#,0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+		annotation PBI_ChangedProperties = ["FormatString"]
+
+		detailRowsDefinition =
+			SELECTCOLUMNS (
+			    Sales,
+			    "Order Date", Sales[Order Date],
+			    "Order Number", Sales[Order Number],
+			    "Order Line Number", Sales[Order Line Number],
+			    "Quantity", Sales[Quantity],
+			    "Unit Cost", Sales[Unit Cost],
+			    "Line Cost", Sales[Quantity] * Sales[Unit Cost],
+			    "Product Code", RELATED ( 'Product'[Product Code] ),
+			    "Product Name", RELATED ( 'Product'[Product Name] ),
+			    "Manufacturer", RELATED ( 'Product'[Manufacturer] )
+			)
+
+
+	column CurrencyKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: CurrencyKey
+		summarizeBy: Count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CustomerKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: CustomerKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Delivery Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Net Price'
+		dataType: Double
+		formatString:= \$#,0.00;(\$#,0.00);\$#,0.00
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Net Price"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Order Date'
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Order Date"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Order Line Number'
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Order Line Number"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Number'
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Order Number"
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDateKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: OrderDateKey
+		summarizeBy: Count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: ProductKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PromotionKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: PromotionKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Quantity
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StoreKey
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: StoreKey
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Cost'
+		dataType: Double
+		formatString:= \$#,0.00;(\$#,0.00);\$#,0.00
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Unit Cost"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Unit Discount'
+		dataType: Double
+		formatString:= \$#,0.00;(\$#,0.00);\$#,0.00
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Unit Discount"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Unit Price'
+		dataType: Double
+		formatString:= \$#,0.00;(\$#,0.00);\$#,0.00
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: "Unit Price"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SalesAmount = Sales[Quantity] * Sales[Unit Price]
+		dataType: Double
+		formatString:= 0.00
+		lineageTag: 6c85b809-bceb-4982-a951-055e754fedbc
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalProductCost = Sales[Quantity] * Sales[Unit Cost] 
+		dataType: Double
+		formatString:= 0.00
+		lineageTag: 7118d6d5-46a3-4d52-9267-fcff6ce17e6a
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrossMargin = Sales[SalesAmount] - Sales[TotalProductCost] 
+		dataType: Double
+		formatString:= 0.00
+		lineageTag: 516e4bdd-cd0d-4987-851e-30f2edaaff0a
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrossMarginPct = DIVIDE ( Sales[GrossMargin], Sales[SalesAmount] )
+		dataType: Double
+		formatString:= 0%;-0%;0%
+		lineageTag: 6a8cb3b0-8f49-4e2b-af64-a77bc59c2f52
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+

@@ -1,0 +1,50 @@
+table 'Time Intelligence'
+	ordinal: 10
+
+	partition Partition = CalculationGroup
+		mode: Import
+
+	calculationGroup
+		precedence: 10
+
+		calculationItem CY = SELECTEDMEASURE ()
+
+		calculationItem QTD =
+			CALCULATE (
+			    SELECTEDMEASURE (),
+			    DATESQTD ( 'Date'[Date] )
+			)
+
+
+		calculationItem YTD =
+			CALCULATE (
+			    SELECTEDMEASURE (),
+			    DATESYTD ( 'Date'[Date] )
+			)
+
+
+		calculationItem SPLY =
+			CALCULATE (
+			    SELECTEDMEASURE (),
+			    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+			)
+
+
+	column Ordinal
+		dataType: Int64
+		isDataTypeInferred: false
+		isHidden
+		sourceColumn: Ordinal
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Calc'
+		dataType: String
+		isDataTypeInferred: false
+		sortByColumn: Ordinal
+		sourceColumn: Name
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
