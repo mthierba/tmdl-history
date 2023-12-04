@@ -1,9 +1,60 @@
 ﻿table Info
-	ordinal: 3
+
+	measure Branch = LOOKUPVALUE(Info[Text], Info[Label], "Branch")
+
+	measure 'Data Updated (UTC)' = LOOKUPVALUE(Info[Timestamp], Info[Label], "Data Updated")
+		formatString = dd-mmm-yyyy hh:mm
+
+	measure 'Dataset Version' = LOOKUPVALUE(Info[Text], Info[Label], "Version")
+
+	measure Environment = LOOKUPVALUE(Info[Text], Info[Label], "Environment")
+
+	measure 'Build Number' = LOOKUPVALUE(Info[Text], Info[Label], "Build Number")
+
+	measure 'Build Reason' = LOOKUPVALUE(Info[Text], Info[Label], "Build Reason")
+
+	measure 'Commit ID' = LOOKUPVALUE(Info[Text], Info[Label], "Commit ID")
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This is my "Hello World"
+	/// measure.
+	measure 'Hello World' = "Hello World"
+
+	column Label
+		dataType: String
+		isHidden
+		summarizeBy: None
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
+
+	column Text
+		dataType: String
+		isHidden
+		summarizeBy: None
+		sourceColumn: Text
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
+
+	column Timestamp
+		dataType: DateTime
+		isHidden
+		formatString = General Date
+		summarizeBy: None
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_ChangedProperties = ["IsHidden"]
 
 	partition Info-f44d74ec-0372-4982-8ace-63656474683c = M
 		mode: Import
-		expression:=
+		expression =
 			let
 			    Source = #table(type table
 			    [
@@ -24,59 +75,4 @@
 			)
 			in
 			    Source
-
-	measure Branch = LOOKUPVALUE(Info[Text], Info[Label], "Branch")
-
-	measure 'Data Updated (UTC)' = LOOKUPVALUE(Info[Timestamp], Info[Label], "Data Updated")
-		formatString:= dd-mmm-yyyy hh:mm
-
-	measure 'Dataset Version' = LOOKUPVALUE(Info[Text], Info[Label], "Version")
-
-	measure Environment = LOOKUPVALUE(Info[Text], Info[Label], "Environment")
-
-	measure 'Build Number' = LOOKUPVALUE(Info[Text], Info[Label], "Build Number")
-
-	measure 'Build Reason' = LOOKUPVALUE(Info[Text], Info[Label], "Build Reason")
-
-	measure 'Commit ID' = LOOKUPVALUE(Info[Text], Info[Label], "Commit ID")
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	/// This is my "Hello World"
-	/// measure.
-	measure 'Hello World' = "Hello World"
-
-	column Label
-		dataType: String
-		isDataTypeInferred: false
-		isHidden
-		sourceColumn: Label
-		summarizeBy: None
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_ChangedProperties = ["IsHidden"]
-
-	column Text
-		dataType: String
-		isDataTypeInferred: false
-		isHidden
-		sourceColumn: Text
-		summarizeBy: None
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_ChangedProperties = ["IsHidden"]
-
-	column Timestamp
-		dataType: DateTime
-		formatString:= General Date
-		isDataTypeInferred: false
-		isHidden
-		sourceColumn: Timestamp
-		summarizeBy: None
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_ChangedProperties = ["IsHidden"]
 

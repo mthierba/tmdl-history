@@ -1,71 +1,52 @@
 ﻿table Product
-	ordinal: 5
-
-	partition Product = M
-		mode: Import
-		expression:=
-			let
-			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Product.csv"]),
-			    Csv = Csv.Document(Source),
-			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}, {"Product Code", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Subcategory", type text}, {"Category", type text}, {"Color", type text}})
-			in
-			    #"Changed Type"
 
 	column Brand
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Brand
 		summarizeBy: None
+		sourceColumn: Brand
 
 		annotation SummarizationSetBy = Automatic
 
 	column Category
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Category
 		summarizeBy: None
+		sourceColumn: Category
 
 		annotation SummarizationSetBy = Automatic
 
 	column Color
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Color
 		summarizeBy: None
+		sourceColumn: Color
 
 		annotation SummarizationSetBy = Automatic
 
 	column Manufacturer
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Manufacturer
 		summarizeBy: None
+		sourceColumn: Manufacturer
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Product Code'
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Product Code
 		summarizeBy: None
+		sourceColumn: Product Code
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Product Name'
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Product Name
 		summarizeBy: None
+		sourceColumn: Product Name
 
 		annotation SummarizationSetBy = Automatic
 
 	column ProductKey
 		dataType: Int64
-		isDataTypeInferred: false
 		isHidden
-		sourceColumn: ProductKey
 		summarizeBy: None
+		sourceColumn: ProductKey
 
 		annotation SummarizationSetBy = Automatic
 
@@ -73,9 +54,8 @@
 
 	column Subcategory
 		dataType: String
-		isDataTypeInferred: false
-		sourceColumn: Subcategory
 		summarizeBy: None
+		sourceColumn: Subcategory
 
 		annotation SummarizationSetBy = Automatic
 
@@ -86,4 +66,15 @@
 
 		level Subcategory
 			column: Subcategory
+
+	partition Product = M
+		mode: Import
+		expression =
+			let
+			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Product.csv"]),
+			    Csv = Csv.Document(Source),
+			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}, {"Product Code", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Subcategory", type text}, {"Category", type text}, {"Color", type text}})
+			in
+			    #"Changed Type"
 

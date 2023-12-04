@@ -1,324 +1,323 @@
 ﻿table State
-	ordinal: 12
-
-	partition State-94755ca3-e050-488b-8105-9e73ffcf8711 = Calculated
-		mode: Import
-		expression:=
-			
-			SELECTCOLUMNS(
-			    GENERATESERIES( -2, 2.1, 0.1 ),
-			    "State", [Value]
-			)
 
 	measure Cylinder = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Cylinder
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Cylinder
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure Faces = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Faces
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Faces
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Five Bars Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Five Bars Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Five Bars Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Standard Arrow' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Standard Arrow
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Standard Arrow
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Three Symbols Uncircled Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Three Symbols Uncircled Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Three Symbols Uncircled Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Traffic Light' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Traffic Light
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Traffic Light
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Traffic Light - Single' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Traffic Light - Single
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Traffic Light - Single
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Variance Arrow' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Variance Arrow
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Variance Arrow
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Status Arrow - Ascending' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Status Arrow - Ascending
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Status Arrow - Ascending
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Status Arrow - Descending' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Status Arrow - Descending
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Status Arrow - Descending
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Traffic Light - Multiple' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Traffic Light - Multiple
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Traffic Light - Multiple
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Five Boxes Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Five Boxes Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Five Boxes Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure Gauge = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Gauge
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Gauge
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Gauge - Ascending' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Gauge - Ascending
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Gauge - Ascending
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Gauge - Descending' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Gauge - Descending
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Gauge - Descending
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Reversed Gauge' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Reversed Gauge
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Reversed Gauge
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Reversed status arrow' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Reversed status arrow
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Reversed status arrow
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Road Signs' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Road Signs
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Road Signs
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure Shapes = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Shapes
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Shapes
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure Smiley = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Smiley
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Smiley
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Smiley Face' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Smiley Face
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Smiley Face
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Status Arrow' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Status Arrow
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Status Arrow
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure Thermometer = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Thermometer
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Thermometer
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Three Triangles' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Three Triangles
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Three Triangles
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Three Circles Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Three Circles Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Three Circles Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Three Flags Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Three Flags Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Three Flags Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	measure 'Three Stars Colored' = SELECTEDVALUE( State[State] )
-		formatString:= 0
-		KPI:
-			statusExpression:= SELECTEDVALUE ( State[State] )
+		formatString = 0
+		kpi:
+			targetExpression = SELECTEDVALUE ( State[State] )
 			statusGraphic: Three Stars Colored
-			targetExpression:= SELECTEDVALUE ( State[State] )
-			trendExpression:= SELECTEDVALUE ( State[State] )
+			statusExpression = SELECTEDVALUE ( State[State] )
 			trendGraphic: Three Stars Colored
+			trendExpression = SELECTEDVALUE ( State[State] )
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
 	column State
 		dataType: Decimal
-		formatString:= 0.00
-		isDataTypeInferred: false
-		sourceColumn: [State]
+		formatString = 0.00
 		summarizeBy: None
+		isNameInferred
+		sourceColumn: [State]
 
 		annotation SummarizationSetBy = User
 
 		annotation Format = <Format Format="NumberDecimal" Accuracy="2" />
 
 		annotation DataTypeAtRefresh = Int64#####not a type
+
+	partition State-94755ca3-e050-488b-8105-9e73ffcf8711 = Calculated
+		mode: Import
+		expression =
+			
+			SELECTCOLUMNS(
+			    GENERATESERIES( -2, 2.1, 0.1 ),
+			    "State", [Value]
+			)
 
 	annotation PBI_Id = d3dde721a4244974a50bb21334096d60
 
