@@ -1,8 +1,4 @@
 ﻿table 'Time Intelligence'
-	ordinal: 10
-
-	partition Partition = CalculationGroup
-		mode: Import
 
 	calculationGroup
 		precedence: 10
@@ -29,19 +25,20 @@
 
 	column Ordinal
 		dataType: Int64
-		isDataTypeInferred: false
 		isHidden
-		sourceColumn: Ordinal
 		summarizeBy: Sum
+		sourceColumn: Ordinal
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Time Calc'
 		dataType: String
-		isDataTypeInferred: false
-		sortByColumn: Ordinal
-		sourceColumn: Name
 		summarizeBy: None
+		sourceColumn: Name
+		sortByColumn: Ordinal
 
 		annotation SummarizationSetBy = Automatic
+
+	partition Partition = CalculationGroup
+		mode: Import
 

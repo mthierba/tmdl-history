@@ -1,9 +1,9 @@
 ﻿dataSource 'Structured Data Source'
 	connectionDetails:
-		address:
-			database: Database01
-			server: Server01
 		protocol: tds
+		address:
+			server: Server01
+			database: Database01
 	credential:
 		authenticationKind: ServiceAccount
 

@@ -1,14 +1,12 @@
 ﻿model Model
-	compatibilityLevel: 1604
 	culture: en-US
+	defaultPowerBIDataSourceVersion: PowerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-GB
 	dataAccessOptions:
 		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
-	defaultPowerBIDataSourceVersion: PowerBI_V3
-	discourageImplicitMeasures
-	ID: b7d357fe-af44-4083-9e4d-2cb216640a3a
-	sourceQueryCulture: en-GB
 
 queryGroup Parameters
 
@@ -21,4 +19,36 @@ annotation PBIDesktopVersion = 2.106.883.0 (22.06)
 annotation PBI_QueryOrder = ["Product","Date","Customer","Promotion","Sales","Store","[SourceUrl]","Info","[Version]","[GH-SHA]","[GH-RunId]","[Environment]","[GH-Branch]","[FilterDate]","[PBITOOLS_VERSION]"]
 
 annotation TabularEditor_SerializeOptions = {"IgnoreInferredObjects":true,"IgnoreInferredProperties":true,"IgnoreTimestamps":true,"SplitMultilineStrings":true,"PrefixFilenames":false,"LocalTranslations":false,"LocalPerspectives":false,"LocalRelationships":false,"Levels":["Data Sources","Perspectives","Relationships","Roles","Shared Expressions","Tables","Tables/Calculation Items","Tables/Columns","Tables/Hierarchies","Tables/Measures","Tables/Partitions","Translations"]}
+
+ref table Customer
+
+ref table Date
+
+ref table Info
+
+ref table Metric
+
+ref table Product
+
+ref table Promotion
+
+ref table Sales
+
+ref table Store
+
+ref table Parameter
+
+ref table 'Time Intelligence'
+
+ref table Calendar
+
+ref table State
+
+ref culture en-US
+
+ref culture de-DE
+
+ref perspective 'Perspective 1'
+
+ref role 'Role 1'
 

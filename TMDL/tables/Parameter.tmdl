@@ -1,40 +1,27 @@
 ﻿table Parameter
 	lineageTag: 9cc03d40-2aa3-43a8-aaac-afd7e5718ab0
-	ordinal: 9
-
-	partition Parameter = Calculated
-		mode: Import
-		expression:=
-			{
-			    ("Continent", NAMEOF('Customer'[Continent]), 0),
-			    ("Region", NAMEOF('Customer'[CountryRegion]), 1),
-			    ("Product", NAMEOF('Product'[Category]), 2),
-			    ("Color", NAMEOF('Product'[Color]), 3)
-			}
 
 	column Parameter
 		dataType: String
-		isNameInferred: false
 		lineageTag: a3e72fe4-6f09-4f7f-933d-d75a5c1ddbdf
+		summarizeBy: None
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
 		relatedColumnDetails:
 			groupByColumns:
-			- groupingColumn: 'Parameter Fields'
-		sortByColumn: 'Parameter Order'
-		sourceColumn: [Value1]
-		summarizeBy: None
+				groupingColumn: 'Parameter Fields'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Parameter Fields'
 		dataType: String
 		isHidden
-		isNameInferred: false
 		lineageTag: cbce0f94-cb2c-4981-830f-9fecdfd1133c
-		sortByColumn: 'Parameter Order'
-		sourceColumn: [Value2]
 		summarizeBy: None
-
-		annotation SummarizationSetBy = Automatic
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
 
 		extendedProperty ParameterMetadata =
 				{
@@ -42,16 +29,28 @@
 				  "version": 3
 				}
 
+		annotation SummarizationSetBy = Automatic
+
 	column 'Parameter Order'
 		dataType: Int64
-		formatString:= 0
 		isHidden
-		isNameInferred: false
+		formatString = 0
 		lineageTag: 79d368af-ecd3-4883-ba7c-c2b95299e753
-		sourceColumn: [Value3]
 		summarizeBy: Sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
 
 		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = Calculated
+		mode: Import
+		expression =
+			{
+			    ("Continent", NAMEOF('Customer'[Continent]), 0),
+			    ("Region", NAMEOF('Customer'[CountryRegion]), 1),
+			    ("Product", NAMEOF('Product'[Category]), 2),
+			    ("Color", NAMEOF('Product'[Color]), 3)
+			}
 
 	annotation PBI_Id = b4fd0a4b91f9490d82c20a9d2c1ea771
 
