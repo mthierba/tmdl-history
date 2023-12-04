@@ -18,7 +18,7 @@ table Date
 	column 'Asia Season'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Asia Season"
+		sourceColumn: Asia Season
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -27,7 +27,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Calendar Year Month Number"
+		sourceColumn: Calendar Year Month Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -38,7 +38,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Calendar Year Month Number'
-		sourceColumn: "Calendar Year Month"
+		sourceColumn: Calendar Year Month
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -47,7 +47,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Calendar Year Number"
+		sourceColumn: Calendar Year Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -59,7 +59,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Calendar Year Quarter Number"
+		sourceColumn: Calendar Year Quarter Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -70,7 +70,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Calendar Year Quarter Number'
-		sourceColumn: "Calendar Year Quarter"
+		sourceColumn: Calendar Year Quarter
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -79,7 +79,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Calendar Year Number'
-		sourceColumn: "Calendar Year"
+		sourceColumn: Calendar Year
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -111,7 +111,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Day of Week Number"
+		sourceColumn: Day of Week Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -122,7 +122,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Day of Week Number'
-		sourceColumn: "Day of Week"
+		sourceColumn: Day of Week
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -130,7 +130,7 @@ table Date
 	column 'Europe Season'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Europe Season"
+		sourceColumn: Europe Season
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -139,7 +139,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Fiscal Month Number"
+		sourceColumn: Fiscal Month Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -150,7 +150,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Fiscal Month Number'
-		sourceColumn: "Fiscal Month"
+		sourceColumn: Fiscal Month
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -159,7 +159,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Fiscal Quarter Number"
+		sourceColumn: Fiscal Quarter Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -170,7 +170,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Fiscal Quarter Number'
-		sourceColumn: "Fiscal Quarter"
+		sourceColumn: Fiscal Quarter
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -179,7 +179,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Fiscal Year Number"
+		sourceColumn: Fiscal Year Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -191,7 +191,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Fiscal Year Quarter Number"
+		sourceColumn: Fiscal Year Quarter Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -202,7 +202,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Fiscal Year Quarter Number'
-		sourceColumn: "Fiscal Year Quarter"
+		sourceColumn: Fiscal Year Quarter
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -211,7 +211,7 @@ table Date
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Fiscal Year Number'
-		sourceColumn: "Fiscal Year"
+		sourceColumn: Fiscal Year
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -219,7 +219,7 @@ table Date
 	column 'Holiday Name'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Holiday Name"
+		sourceColumn: Holiday Name
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -228,7 +228,7 @@ table Date
 		dataType: Boolean
 		formatString:= "TRUE";"TRUE";"FALSE"
 		isDataTypeInferred: false
-		sourceColumn: "Is Holiday"
+		sourceColumn: Is Holiday
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -237,7 +237,7 @@ table Date
 		dataType: Int64
 		isDataTypeInferred: false
 		isHidden
-		sourceColumn: "Month Number"
+		sourceColumn: Month Number
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -256,7 +256,7 @@ table Date
 	column 'North America Season'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "North America Season"
+		sourceColumn: North America Season
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -264,7 +264,7 @@ table Date
 	column 'Working Day'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Working Day"
+		sourceColumn: Working Day
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic

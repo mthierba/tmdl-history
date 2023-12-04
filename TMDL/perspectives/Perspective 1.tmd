@@ -1,68 +1,46 @@
 perspective 'Perspective 1'
 
 	perspectiveTable Customer
-		table: Customer.Customer
 
 		perspectiveColumn 'Address Line 1'
-			column: Customer.'Address Line 1'
 
 		perspectiveColumn 'Address Line 2'
-			column: Customer.'Address Line 2'
 
 		perspectiveColumn 'Cars Owned'
-			column: Customer.'Cars Owned'
 
 		perspectiveColumn 'Children At Home'
-			column: Customer.'Children At Home'
 
 		perspectiveColumn City
-			column: Customer.City
 
 		perspectiveColumn 'Company Name'
-			column: Customer.'Company Name'
 
 		perspectiveColumn CountryRegion
-			column: Customer.CountryRegion
 
 		perspectiveColumn 'Customer Code'
-			column: Customer.'Customer Code'
 
 		perspectiveColumn 'Customer Type'
-			column: Customer.'Customer Type'
 
 		perspectiveColumn CustomerKey
-			column: Customer.CustomerKey
 
 		perspectiveColumn 'Date First Purchase'
-			column: Customer.'Date First Purchase'
 
 		perspectiveColumn Education
-			column: Customer.Education
 
 		perspectiveColumn Gender
-			column: Customer.Gender
 
 		perspectiveColumn 'House Ownership'
-			column: Customer.'House Ownership'
 
 		perspectiveColumn 'Marital Status'
-			column: Customer.'Marital Status'
 
 		perspectiveColumn Name
-			column: Customer.Name
 
 		perspectiveColumn Phone
-			column: Customer.Phone
 
 		perspectiveColumn State
-			column: Customer.State
 
 		perspectiveColumn Title
-			column: Customer.Title
 
 		perspectiveColumn 'Total Children'
-			column: Customer.'Total Children'
 
 		perspectiveColumn 'Yearly Income'
-			column: Customer.'Yearly Income'
 

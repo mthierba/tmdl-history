@@ -2,7 +2,7 @@ table Calendar
 	dataCategory: Time
 	ordinal: 11
 
-	partition 'Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c' = Calculated
+	partition Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c = Calculated
 		mode: Import
 		expression:=
 			VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )
@@ -38,7 +38,7 @@ table Calendar
 	column 'Calendar Year'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "[Calendar Year]"
+		sourceColumn: [Calendar Year]
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -51,7 +51,7 @@ table Calendar
 		dataType: String
 		isDataTypeInferred: false
 		sortByColumn: 'Month Number'
-		sourceColumn: "[Month Name]"
+		sourceColumn: [Month Name]
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -64,7 +64,7 @@ table Calendar
 		dataType: Int64
 		formatString:= 0
 		isDataTypeInferred: false
-		sourceColumn: "[Month Number]"
+		sourceColumn: [Month Number]
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -89,7 +89,7 @@ table Calendar
 		dataType: Int64
 		formatString:= 0
 		isDataTypeInferred: false
-		sourceColumn: "[Weekday number]"
+		sourceColumn: [Weekday number]
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -113,10 +113,10 @@ table Calendar
 	annotation PBI_Id = b6a086042fa54ad08adef743517ab23e
 
 	extendedProperty Json =
-		{
-		  "name": "SummarizationSetBy",
-		  "value": "Automatic"
-		}
+			{
+			  "name": "SummarizationSetBy",
+			  "value": "Automatic"
+			}
 
 	extendedProperty String = Lorem ipsum
 

@@ -16,7 +16,7 @@ table Store
 	column 'Address Line 1'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Address Line 1"
+		sourceColumn: Address Line 1
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -24,7 +24,7 @@ table Store
 	column 'Address Line 2'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Address Line 2"
+		sourceColumn: Address Line 2
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -42,7 +42,7 @@ table Store
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Close Date"
+		sourceColumn: Close Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -52,7 +52,7 @@ table Store
 	column 'Close Reason'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Close Reason"
+		sourceColumn: Close Reason
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -90,7 +90,7 @@ table Store
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Last Remodel Date"
+		sourceColumn: Last Remodel Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -101,7 +101,7 @@ table Store
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Open Date"
+		sourceColumn: Open Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -111,7 +111,7 @@ table Store
 	column 'Selling Area'
 		dataType: Double
 		isDataTypeInferred: false
-		sourceColumn: "Selling Area"
+		sourceColumn: Selling Area
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -137,7 +137,7 @@ table Store
 	column 'Store Name'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Store Name"
+		sourceColumn: Store Name
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -145,7 +145,7 @@ table Store
 	column 'Store Phone'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Store Phone"
+		sourceColumn: Store Phone
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -153,7 +153,7 @@ table Store
 	column 'Store Type'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Store Type"
+		sourceColumn: Store Type
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -173,7 +173,7 @@ table Store
 		dataCategory: PostalCode
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Zip Code Extension"
+		sourceColumn: Zip Code Extension
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -181,7 +181,7 @@ table Store
 	column 'Zip Code'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Zip Code"
+		sourceColumn: Zip Code
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
