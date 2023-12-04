@@ -1,4 +1,4 @@
-role 'Role 1'
+﻿role 'Role 1'
 
 	tablePermission Customer
 		metadataPermission: Read

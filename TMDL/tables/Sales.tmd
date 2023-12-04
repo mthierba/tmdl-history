@@ -1,4 +1,4 @@
-table Sales
+﻿table Sales
 	refreshPolicy:
 		incrementalGranularity: Day
 		incrementalPeriods: 7

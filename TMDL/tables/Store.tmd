@@ -1,4 +1,4 @@
-table Store
+﻿table Store
 	ordinal: 8
 
 	partition Store = M

@@ -1,4 +1,4 @@
-table Date
+﻿table Date
 	dataCategory: Time
 	ordinal: 2
 

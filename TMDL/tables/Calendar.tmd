@@ -1,4 +1,4 @@
-table Calendar
+﻿table Calendar
 	dataCategory: Time
 	ordinal: 11
 

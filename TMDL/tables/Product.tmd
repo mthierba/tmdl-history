@@ -1,4 +1,4 @@
-table Product
+﻿table Product
 	ordinal: 5
 
 	partition Product = M

@@ -1,4 +1,4 @@
-table 'Time Intelligence'
+﻿table 'Time Intelligence'
 	ordinal: 10
 
 	partition Partition = CalculationGroup
