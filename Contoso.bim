@@ -1,0 +1,3193 @@
+{
+  "name": "Database",
+  "id": "b7d357fe-af44-4083-9e4d-2cb216640a3a",
+  "compatibilityLevel": 1604,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "fastCombine": true,
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "discourageImplicitMeasures": true,
+    "sourceQueryCulture": "en-GB",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "Structured Data Source",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "Server01",
+            "database": "Database01"
+          }
+        },
+        "credential": {
+          "AuthenticationKind": "ServiceAccount"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "Address Line 1",
+            "dataType": "string",
+            "sourceColumn": "Address Line 1",
+            "displayFolder": "\"Folder 2!\"",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Address Line 2",
+            "dataType": "string",
+            "sourceColumn": "Address Line 2",
+            "displayFolder": "With Space ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Birth Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Birth Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Cars Owned",
+            "dataType": "int64",
+            "sourceColumn": "Cars Owned",
+            "displayFolder": "'Folder 1'\\\"Sub-Folder\"",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Children At Home",
+            "dataType": "int64",
+            "sourceColumn": "Children At Home",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "dataCategory": "City",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Company Name",
+            "dataType": "string",
+            "sourceColumn": "Company Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Continent",
+            "dataType": "string",
+            "sourceColumn": "Continent",
+            "dataCategory": "Continent",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CountryRegion",
+            "dataType": "string",
+            "sourceColumn": "CountryRegion",
+            "dataCategory": "Country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Customer Code",
+            "dataType": "string",
+            "sourceColumn": "Customer Code",
+            "dataCategory": "PostalCode",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Customer Type",
+            "dataType": "string",
+            "sourceColumn": "Customer Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Date First Purchase",
+            "dataType": "dateTime",
+            "sourceColumn": "Date First Purchase",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Education",
+            "dataType": "string",
+            "sourceColumn": "Education",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "House Ownership",
+            "dataType": "string",
+            "sourceColumn": "House Ownership",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Marital Status",
+            "dataType": "string",
+            "sourceColumn": "Marital Status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Occupation",
+            "dataType": "string",
+            "sourceColumn": "Occupation",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "description": [
+              "The Customer State",
+              "2nd line"
+            ],
+            "sourceColumn": "State",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Total Children",
+            "dataType": "int64",
+            "sourceColumn": "Total Children",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Yearly Income",
+            "dataType": "double",
+            "sourceColumn": "Yearly Income",
+            "formatString": "#,0.00",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Customer",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Customer.csv\"]),",
+                "    Csv = Csv.Document(Source, [QuoteStyle=QuoteStyle.Csv]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"CustomerKey\", Int64.Type}, {\"Customer Code\", type text}, {\"Title\", type text}, {\"Name\", type text}, {\"Marital Status\", type text}, {\"Gender\", type text}, {\"Yearly Income\", type number}, {\"Total Children\", Int64.Type}, {\"Children At Home\", Int64.Type}, {\"Education\", type text}, {\"Occupation\", type text}, {\"House Ownership\", type text}, {\"Cars Owned\", Int64.Type}, {\"Continent\", type text}, {\"City\", type text}, {\"State\", type text}, {\"CountryRegion\", type text}, {\"Address Line 1\", type text}, {\"Address Line 2\", type text}, {\"Phone\", type text}, {\"Customer Type\", type text}, {\"Company Name\", type text}}),",
+                "    #\"Parsed Date\" = Table.TransformColumns(#\"Changed Type\",{{\"Birth Date\", each Date.From(DateTimeZone.From(_)), type date}, {\"Date First Purchase\", each Date.From(DateTimeZone.From(_)), type date}})",
+                "in",
+                "    #\"Parsed Date\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "Asia Season",
+            "dataType": "string",
+            "sourceColumn": "Asia Season",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year Month Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Calendar Year Month Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year Month",
+            "dataType": "string",
+            "sourceColumn": "Calendar Year Month",
+            "sortByColumn": "Calendar Year Month Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Calendar Year Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year Quarter Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Calendar Year Quarter Number",
+            "dataCategory": "PostalCode",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year Quarter",
+            "dataType": "string",
+            "sourceColumn": "Calendar Year Quarter",
+            "sortByColumn": "Calendar Year Quarter Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Calendar Year",
+            "dataType": "string",
+            "sourceColumn": "Calendar Year",
+            "sortByColumn": "Calendar Year Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DateKey",
+            "summarizeBy": "count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Day of Week Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Day of Week Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Day of Week",
+            "dataType": "string",
+            "sourceColumn": "Day of Week",
+            "sortByColumn": "Day of Week Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Europe Season",
+            "dataType": "string",
+            "sourceColumn": "Europe Season",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Month Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Month Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Month",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Month",
+            "sortByColumn": "Fiscal Month Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Quarter Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Quarter Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Quarter",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Quarter",
+            "sortByColumn": "Fiscal Quarter Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Year Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Year Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Year Quarter Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Year Quarter Number",
+            "dataCategory": "PostalCode",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Year Quarter",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year Quarter",
+            "sortByColumn": "Fiscal Year Quarter Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "string",
+            "sourceColumn": "Fiscal Year",
+            "sortByColumn": "Fiscal Year Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Holiday Name",
+            "dataType": "string",
+            "sourceColumn": "Holiday Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Is Holiday",
+            "dataType": "boolean",
+            "sourceColumn": "Is Holiday",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Month Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Month Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "sortByColumn": "Month Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "North America Season",
+            "dataType": "string",
+            "sourceColumn": "North America Season",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Working Day",
+            "dataType": "string",
+            "sourceColumn": "Working Day",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Date.csv\"]),",
+                "    Csv = Csv.Document(Source),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"DateKey\", Int64.Type}, {\"Calendar Year Number\", Int64.Type}, {\"Calendar Year\", type text}, {\"Calendar Year Quarter Number\", Int64.Type}, {\"Calendar Year Quarter\", type text}, {\"Calendar Year Month Number\", Int64.Type}, {\"Month Number\", Int64.Type}, {\"Month\", type text}, {\"Day of Week Number\", Int64.Type}, {\"Day of Week\", type text}, {\"Fiscal Year Number\", Int64.Type}, {\"Fiscal Year\", type text}, {\"Fiscal Quarter Number\", Int64.Type}, {\"Fiscal Quarter\", type text}, {\"Fiscal Year Quarter Number\", Int64.Type}, {\"Fiscal Year Quarter\", type text}, {\"Fiscal Month Number\", Int64.Type}, {\"Fiscal Month\", type text}, {\"Working Day\", type text}, {\"Is Holiday\", Int64.Type}, {\"Holiday Name\", type text}, {\"Europe Season\", type text}, {\"North America Season\", type text}, {\"Asia Season\", type text}}),",
+                "    #\"Parsed Date\" = Table.TransformColumns(#\"Changed Type\",{{\"Date\", each Date.From(DateTimeZone.From(_)), type date}}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Parsed Date\",{{\"Is Holiday\", type logical}})",
+                "in",
+                "    #\"Changed Type1\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Info",
+        "columns": [
+          {
+            "name": "Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Label",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"IsHidden\"]"
+              }
+            ]
+          },
+          {
+            "name": "Text",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Text",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"IsHidden\"]"
+              }
+            ]
+          },
+          {
+            "name": "Timestamp",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Timestamp",
+            "formatString": "General Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"IsHidden\"]"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Info-f44d74ec-0372-4982-8ace-63656474683c",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #table(type table",
+                "    [",
+                "        #\"Label\"             = text, ",
+                "        #\"Timestamp\"         = datetime,",
+                "        #\"Text\"              = text",
+                "    ], ",
+                "    {",
+                "        { \"Data Updated\", DateTimeZone.RemoveZone(DateTimeZone.UtcNow()), null },",
+                "        { \"Version\",            null,   #\"[Version]\" },",
+                "        { \"Branch\",             null,   #\"[CI-Branch]\" },",
+                "        { \"Commit ID\",          null,   #\"[CI-Commit]\" },",
+                "        { \"Build Number\",       null,   #\"[CI-BuildNumber]\" },",
+                "        { \"Build Reason\",       null,   #\"[CI-BuildReason]\" },",
+                "        { \"pbi-tools Version\",  null,   #\"[PBITOOLS_VERSION]\" },",
+                "        { \"Environment\",        null,   #\"[Environment]\"}",
+                "    }",
+                ")",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Branch",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Branch\")"
+          },
+          {
+            "name": "Data Updated (UTC)",
+            "expression": "LOOKUPVALUE(Info[Timestamp], Info[Label], \"Data Updated\")",
+            "formatString": "dd-mmm-yyyy hh:mm"
+          },
+          {
+            "name": "Dataset Version",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Version\")"
+          },
+          {
+            "name": "Environment",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Environment\")"
+          },
+          {
+            "name": "Build Number",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Build Number\")"
+          },
+          {
+            "name": "Build Reason",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Build Reason\")"
+          },
+          {
+            "name": "Commit ID",
+            "expression": "LOOKUPVALUE(Info[Text], Info[Label], \"Commit ID\")",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Hello World",
+            "description": [
+              "This is my \"Hello World\"",
+              "measure."
+            ],
+            "expression": "\"Hello World\""
+          }
+        ]
+      },
+      {
+        "name": "Metric",
+        "calculationGroup": {
+          "precedence": 1,
+          "calculationItems": [
+            {
+              "name": "Margin",
+              "expression": "[Margin]",
+              "ordinal": 0
+            },
+            {
+              "name": "Sales Amount",
+              "expression": "[Sales Amount]",
+              "ordinal": 1
+            },
+            {
+              "name": "Sales Quantity",
+              "expression": "[Sales Quantity]",
+              "ordinal": 2,
+              "formatStringDefinition": {
+                "expression": "\"#,##0\""
+              }
+            },
+            {
+              "name": "Total Cost",
+              "expression": "[Cost]",
+              "ordinal": 3
+            }
+          ]
+        },
+        "columns": [
+          {
+            "name": "Metric",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sortByColumn": "Ordinal",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Ordinal",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Ordinal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "mode": "import",
+            "source": {
+              "type": "calculationGroup"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Product",
+        "columns": [
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Manufacturer",
+            "dataType": "string",
+            "sourceColumn": "Manufacturer",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Product Code",
+            "dataType": "string",
+            "sourceColumn": "Product Code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Product Name",
+            "dataType": "string",
+            "sourceColumn": "Product Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Subcategory",
+            "dataType": "string",
+            "sourceColumn": "Subcategory",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Product",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Product.csv\"]),",
+                "    Csv = Csv.Document(Source),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ProductKey\", Int64.Type}, {\"Product Code\", type text}, {\"Product Name\", type text}, {\"Manufacturer\", type text}, {\"Brand\", type text}, {\"Subcategory\", type text}, {\"Category\", type text}, {\"Color\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Category-Subcategory",
+            "levels": [
+              {
+                "name": "Category",
+                "ordinal": 0,
+                "column": "Category"
+              },
+              {
+                "name": "Subcategory",
+                "ordinal": 1,
+                "column": "Subcategory"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Promotion",
+        "columns": [
+          {
+            "name": "Discount",
+            "dataType": "double",
+            "sourceColumn": "Discount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "End Date",
+            "dataType": "dateTime",
+            "sourceColumn": "End Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Promotion Category",
+            "dataType": "string",
+            "sourceColumn": "Promotion Category",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Promotion Code",
+            "dataType": "string",
+            "sourceColumn": "Promotion Code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Promotion Type",
+            "dataType": "string",
+            "sourceColumn": "Promotion Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Promotion",
+            "dataType": "string",
+            "sourceColumn": "Promotion",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "PromotionKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Start Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Start Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Promotion",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Promotion.csv\"]),",
+                "    Csv = Csv.Document(Source),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"PromotionKey\", Int64.Type}, {\"Promotion Code\", type text}, {\"Promotion\", type text}, {\"Discount\", type number}, {\"Promotion Type\", type text}, {\"Promotion Category\", type text}}),",
+                "    #\"Parsed Date\" = Table.TransformColumns(#\"Changed Type\",{{\"Start Date\", each Date.From(DateTimeZone.From(_)), type date}, {\"End Date\", each Date.From(DateTimeZone.From(_)), type date}})",
+                "in",
+                "    #\"Parsed Date\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sales",
+        "refreshPolicy": {
+          "policyType": "basic",
+          "rollingWindowGranularity": "year",
+          "rollingWindowPeriods": 5,
+          "incrementalGranularity": "day",
+          "incrementalPeriods": 7,
+          "sourceExpression": [
+            "let",
+            "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Sales.csv\"]),",
+            "    Csv = Csv.Document(Source),",
+            "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+            "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"StoreKey\", Int64.Type}, {\"ProductKey\", Int64.Type}, {\"PromotionKey\", Int64.Type}, {\"CurrencyKey\", Int64.Type}, {\"CustomerKey\", Int64.Type}, {\"OrderDateKey\", Int64.Type},{\"Order Line Number\", Int64.Type}, {\"Quantity\", Int64.Type}, {\"Unit Price\", type number}, {\"Unit Discount\", type number}, {\"Unit Cost\", type number}, {\"Net Price\", type number}}),",
+            "    #\"Parsed Date\" = Table.TransformColumns(#\"Changed Type\",{{\"Delivery Date\", each Date.From(DateTimeZone.From(_)), type date}, {\"Order Date\", each Date.From(DateTimeZone.From(_)), type date}}),",
+            "    Filtered_Date = if #\"[FilterDate]\" = null then #\"Parsed Date\" else Table.SelectRows(#\"Parsed Date\", each [Order Date] >= #\"[FilterDate]\")",
+            "in",
+            "    Filtered_Date"
+          ]
+        },
+        "columns": [
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CurrencyKey",
+            "summarizeBy": "count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Delivery Date",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Delivery Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Net Price",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Net Price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          },
+          {
+            "name": "Order Date",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "Order Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Order Line Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Order Line Number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Order Number",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Order Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "OrderDateKey",
+            "summarizeBy": "count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "PromotionKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Quantity",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "StoreKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Unit Cost",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Unit Cost",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          },
+          {
+            "name": "Unit Discount",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Unit Discount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          },
+          {
+            "name": "Unit Price",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Unit Price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "SalesAmount",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "Sales[Quantity] * Sales[Unit Price]",
+            "formatString": "0.00",
+            "lineageTag": "6c85b809-bceb-4982-a951-055e754fedbc",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "TotalProductCost",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "Sales[Quantity] * Sales[Unit Cost] ",
+            "formatString": "0.00",
+            "lineageTag": "7118d6d5-46a3-4d52-9267-fcff6ce17e6a",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "GrossMargin",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "Sales[SalesAmount] - Sales[TotalProductCost] ",
+            "formatString": "0.00",
+            "lineageTag": "516e4bdd-cd0d-4987-851e-30f2edaaff0a",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "GrossMarginPct",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "DIVIDE ( Sales[GrossMargin], Sales[SalesAmount] )",
+            "formatString": "0%;-0%;0%",
+            "lineageTag": "6a8cb3b0-8f49-4e2b-af64-a77bc59c2f52",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales-fae7d1f1-9ede-41b7-b875-8dda67703e5e",
+            "mode": "import",
+            "source": {
+              "type": "m"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Margin",
+            "expression": "[Sales Amount] - [Cost]",
+            "formatString": "\"$\"#,0",
+            "detailRowsDefinition": {
+              "expression": [
+                "ADDCOLUMNS (",
+                "    NATURALINNERJOIN (",
+                "        DETAILROWS ( [Sales Amount] ),",
+                "        DETAILROWS ( [Cost] )",
+                "    ),",
+                "    \"Line Margin\", [Line Amount] - [Line Cost]",
+                ")"
+              ]
+            },
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              },
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"FormatString\"]"
+              }
+            ]
+          },
+          {
+            "name": "Sales Amount",
+            "expression": "SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )",
+            "detailRowsDefinition": {
+              "expression": [
+                "SELECTCOLUMNS (",
+                "    Sales,",
+                "    \"Order Date\", Sales[Order Date],",
+                "    \"Order Number\", Sales[Order Number]",
+                "        & REPT ( \"0\", LEN ( Sales[Order Number] ) - 5 )",
+                "        & Sales[Order Number],",
+                "    \"Order Line Number\", Sales[Order Line Number],",
+                "    \"Quantity\", Sales[Quantity],",
+                "    \"Net Price\", Sales[Net Price],",
+                "    \"Line Amount\", Sales[Quantity] * Sales[Net Price],",
+                "    \"Product Code\", RELATED ( 'Product'[Product Code] ),",
+                "    \"Product Name\", RELATED ( 'Product'[Product Name] ),",
+                "    \"Store Name\", RELATED ( Store[Store Name] ),",
+                "    \"Store City\", RELATED ( Store[City] ),",
+                "    \"Customer Code\", RELATED ( Customer[Customer Code] ),",
+                "    \"Customer Name\", RELATED ( Customer[Name] )",
+                ")"
+              ]
+            },
+            "formatStringDefinition": {
+              "expression": [
+                "IF ( SELECTEDMEASURE() <= 1E6, \"#0,.00\", \"#0,,.00 M\" )",
+                ""
+              ]
+            },
+            "annotations": [
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"FormatString\"]"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Sales Quantity",
+            "expression": "SUM ( Sales[Quantity] )",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Cost",
+            "expression": "SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )",
+            "formatString": "\"$\"#,0",
+            "detailRowsDefinition": {
+              "expression": [
+                "SELECTCOLUMNS (",
+                "    Sales,",
+                "    \"Order Date\", Sales[Order Date],",
+                "    \"Order Number\", Sales[Order Number],",
+                "    \"Order Line Number\", Sales[Order Line Number],",
+                "    \"Quantity\", Sales[Quantity],",
+                "    \"Unit Cost\", Sales[Unit Cost],",
+                "    \"Line Cost\", Sales[Quantity] * Sales[Unit Cost],",
+                "    \"Product Code\", RELATED ( 'Product'[Product Code] ),",
+                "    \"Product Name\", RELATED ( 'Product'[Product Name] ),",
+                "    \"Manufacturer\", RELATED ( 'Product'[Manufacturer] )",
+                ")"
+              ]
+            },
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              },
+              {
+                "name": "PBI_ChangedProperties",
+                "value": "[\"FormatString\"]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Store",
+        "columns": [
+          {
+            "name": "Address Line 1",
+            "dataType": "string",
+            "sourceColumn": "Address Line 1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Address Line 2",
+            "dataType": "string",
+            "sourceColumn": "Address Line 2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "dataCategory": "City",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Close Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Close Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Close Reason",
+            "dataType": "string",
+            "sourceColumn": "Close Reason",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Continent",
+            "dataType": "string",
+            "sourceColumn": "Continent",
+            "dataCategory": "Continent",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CountryRegion",
+            "dataType": "string",
+            "sourceColumn": "CountryRegion",
+            "dataCategory": "Country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Employees",
+            "dataType": "int64",
+            "description": "Number of active store employees",
+            "sourceColumn": "Employees",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Last Remodel Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Last Remodel Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Open Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Open Date",
+            "formatString": "Long Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "Selling Area",
+            "dataType": "double",
+            "sourceColumn": "Selling Area",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Store Name",
+            "dataType": "string",
+            "sourceColumn": "Store Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Store Phone",
+            "dataType": "string",
+            "sourceColumn": "Store Phone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Store Type",
+            "dataType": "string",
+            "sourceColumn": "Store Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "StoreKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Zip Code Extension",
+            "dataType": "string",
+            "sourceColumn": "Zip Code Extension",
+            "dataCategory": "PostalCode",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zip Code",
+            "dataType": "string",
+            "sourceColumn": "Zip Code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Store",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Web.Contents(#\"[SourceUrl]\", [RelativePath = \"pbi-tools/contoso-sales-model/main/data/Store.csv\"]),",
+                "    Csv = Csv.Document(Source),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"StoreKey\", Int64.Type}, {\"Store Type\", type text}, {\"Store Name\", type text}, {\"Status\", type text}, {\"Zip Code\", type text}, {\"Zip Code Extension\", type text}, {\"Store Phone\", type text}, {\"Continent\", type text}, {\"City\", type text}, {\"State\", type text}, {\"CountryRegion\", type text}, {\"Address Line 1\", type text}, {\"Address Line 2\", type text}, {\"Close Reason\", type text}, {\"Employees\", Int64.Type}, {\"Selling Area\", type number}}),",
+                "    #\"Parsed Date\" = Table.TransformColumns(#\"Changed Type\",{{\"Open Date\", each Date.From(DateTimeZone.From(_)), type date}, {\"Close Date\", each Date.From(DateTimeZone.From(_)), type date}, {\"Last Remodel Date\", each Date.From(DateTimeZone.From(_)), type date}})",
+                "in",
+                "    #\"Parsed Date\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Parameter",
+        "lineageTag": "9cc03d40-2aa3-43a8-aaac-afd7e5718ab0",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Parameter",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]",
+            "sortByColumn": "Parameter Order",
+            "lineageTag": "a3e72fe4-6f09-4f7f-933d-d75a5c1ddbdf",
+            "summarizeBy": "none",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Parameter Fields"
+                }
+              ]
+            },
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Parameter Fields",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[Value2]",
+            "sortByColumn": "Parameter Order",
+            "lineageTag": "cbce0f94-cb2c-4981-830f-9fecdfd1133c",
+            "summarizeBy": "none",
+            "extendedProperties": [
+              {
+                "type": "json",
+                "name": "ParameterMetadata",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Parameter Order",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[Value3]",
+            "formatString": "0",
+            "lineageTag": "79d368af-ecd3-4883-ba7c-c2b95299e753",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Parameter",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "{",
+                "    (\"Continent\", NAMEOF('Customer'[Continent]), 0),",
+                "    (\"Region\", NAMEOF('Customer'[CountryRegion]), 1),",
+                "    (\"Product\", NAMEOF('Product'[Category]), 2),",
+                "    (\"Color\", NAMEOF('Product'[Color]), 3)",
+                "}"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "b4fd0a4b91f9490d82c20a9d2c1ea771"
+          }
+        ]
+      },
+      {
+        "name": "Time Intelligence",
+        "calculationGroup": {
+          "precedence": 10,
+          "calculationItems": [
+            {
+              "name": "CY",
+              "expression": "SELECTEDMEASURE ()",
+              "ordinal": 0
+            },
+            {
+              "name": "QTD",
+              "expression": [
+                "CALCULATE (",
+                "    SELECTEDMEASURE (),",
+                "    DATESQTD ( 'Date'[Date] )",
+                ")"
+              ],
+              "ordinal": 1
+            },
+            {
+              "name": "YTD",
+              "expression": [
+                "CALCULATE (",
+                "    SELECTEDMEASURE (),",
+                "    DATESYTD ( 'Date'[Date] )",
+                ")"
+              ],
+              "ordinal": 2
+            },
+            {
+              "name": "SPLY",
+              "expression": [
+                "CALCULATE (",
+                "    SELECTEDMEASURE (),",
+                "    SAMEPERIODLASTYEAR ( 'Date'[Date] )",
+                ")"
+              ],
+              "ordinal": 3
+            }
+          ]
+        },
+        "columns": [
+          {
+            "name": "Ordinal",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Ordinal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Time Calc",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sortByColumn": "Ordinal",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "mode": "import",
+            "source": {
+              "type": "calculationGroup"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isKey": true,
+            "sourceColumn": "[Date]",
+            "formatString": "General Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeGeneralPattern\"><DateTimes><DateTime LCID=\"1033\" Group=\"GeneralDateTimeLong\" FormatString=\"G\" /></DateTimes></Format>"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "DateTime#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Calendar Year",
+            "dataType": "string",
+            "isNameInferred": true,
+            "sourceColumn": "[Calendar Year]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Text\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "String#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Name",
+            "dataType": "string",
+            "isNameInferred": true,
+            "sourceColumn": "[Month Name]",
+            "sortByColumn": "Month Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Text\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "String#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Number",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "sourceColumn": "[Month Number]",
+            "formatString": "0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "Int64#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Weekday",
+            "dataType": "string",
+            "isNameInferred": true,
+            "sourceColumn": "[Weekday]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Text\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "String#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Weekday number",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "sourceColumn": "[Weekday number]",
+            "formatString": "0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "Int64#####not a type"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Quarter",
+            "dataType": "string",
+            "isNameInferred": true,
+            "sourceColumn": "[Quarter]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Text\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "String#####not a type"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )",
+                "VAR MaxYear = YEAR ( MAX ( Sales[Order Date] ) )",
+                "RETURN",
+                "ADDCOLUMNS ( ",
+                "    FILTER ( ",
+                "        CALENDARAUTO( ), ",
+                "        AND ( YEAR ( [Date] ) >= MinYear, YEAR ( [Date] ) <= MaxYear )",
+                "    ),",
+                "    \"Calendar Year\", \"CY \" & YEAR ( [Date] ),",
+                "    \"Month Name\", FORMAT ( [Date], \"mmmm\" ),",
+                "    \"Month Number\", MONTH ( [Date] ),",
+                "\t\"Weekday\", FORMAT ( [Date], \"dddd\" ),",
+                "    \"Weekday number\", WEEKDAY( [Date] ),",
+                "    \"Quarter\", \"Q\" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 12 ) + 1",
+                ") "
+              ]
+            }
+          }
+        ],
+        "extendedProperties": [
+          {
+            "type": "json",
+            "name": "Json",
+            "value": {
+              "name": "SummarizationSetBy",
+              "value": "Automatic"
+            }
+          },
+          {
+            "name": "String",
+            "value": "Lorem ipsum"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "b6a086042fa54ad08adef743517ab23e"
+          }
+        ]
+      },
+      {
+        "name": "State",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "State",
+            "dataType": "decimal",
+            "isNameInferred": true,
+            "sourceColumn": "[State]",
+            "formatString": "0.00",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberDecimal\" Accuracy=\"2\" />"
+              },
+              {
+                "name": "DataTypeAtRefresh",
+                "value": "Int64#####not a type"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "State-94755ca3-e050-488b-8105-9e73ffcf8711",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "",
+                "SELECTCOLUMNS(",
+                "    GENERATESERIES( -2, 2.1, 0.1 ),",
+                "    \"State\", [Value]",
+                ")"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Cylinder",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Cylinder",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Cylinder",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Faces",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Faces",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Faces",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Five Bars Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Five Bars Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Five Bars Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Standard Arrow",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Standard Arrow",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Standard Arrow",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Three Symbols Uncircled Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Three Symbols Uncircled Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Three Symbols Uncircled Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Traffic Light",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Traffic Light",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Traffic Light",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Traffic Light - Single",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Traffic Light - Single",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Traffic Light - Single",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Variance Arrow",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Variance Arrow",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Variance Arrow",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Status Arrow - Ascending",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Status Arrow - Ascending",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Status Arrow - Ascending",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Status Arrow - Descending",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Status Arrow - Descending",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Status Arrow - Descending",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Traffic Light - Multiple",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Traffic Light - Multiple",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Traffic Light - Multiple",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Five Boxes Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Five Boxes Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Five Boxes Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Gauge",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Gauge",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Gauge",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Gauge - Ascending",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Gauge - Ascending",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Gauge - Ascending",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Gauge - Descending",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Gauge - Descending",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Gauge - Descending",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Reversed Gauge",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Reversed Gauge",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Reversed Gauge",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Reversed status arrow",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Reversed status arrow",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Reversed status arrow",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Road Signs",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Road Signs",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Road Signs",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Shapes",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Shapes",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Shapes",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Smiley",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Smiley",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Smiley",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Smiley Face",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Smiley Face",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Smiley Face",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Status Arrow",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Status Arrow",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Status Arrow",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Thermometer",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Thermometer",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Thermometer",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Three Triangles",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Three Triangles",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Three Triangles",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Three Circles Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Three Circles Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Three Circles Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Three Flags Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Three Flags Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Three Flags Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          },
+          {
+            "name": "Three Stars Colored",
+            "expression": "SELECTEDVALUE( State[State] )",
+            "formatString": "0",
+            "kpi": {
+              "targetExpression": "SELECTEDVALUE ( State[State] )",
+              "statusGraphic": "Three Stars Colored",
+              "statusExpression": "SELECTEDVALUE ( State[State] )",
+              "trendGraphic": "Three Stars Colored",
+              "trendExpression": "SELECTEDVALUE ( State[State] )"
+            },
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"NumberWhole\" Accuracy=\"0\" />"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "d3dde721a4244974a50bb21334096d60"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "8c8b00e4-961a-489c-9a8b-812542526d79",
+        "fromTable": "Sales",
+        "fromColumn": "Order Date",
+        "toTable": "Date",
+        "toColumn": "Date"
+      },
+      {
+        "name": "cdc1f678-516d-402a-8bd3-13b1df211879",
+        "fromTable": "Sales",
+        "fromColumn": "Delivery Date",
+        "toTable": "Date",
+        "toColumn": "Date",
+        "isActive": false
+      },
+      {
+        "name": "56488b0e-a821-4cfc-bdd3-8cc68f36b536",
+        "fromTable": "Sales",
+        "fromColumn": "StoreKey",
+        "toTable": "Store",
+        "toColumn": "StoreKey"
+      },
+      {
+        "name": "2ea9d16c-6bf3-4169-92f2-16b3d4c7e1b5",
+        "fromTable": "Sales",
+        "fromColumn": "PromotionKey",
+        "toTable": "Promotion",
+        "toColumn": "PromotionKey"
+      },
+      {
+        "name": "deca5bcb-ea8f-467a-b790-fa78ea247d57",
+        "fromTable": "Sales",
+        "fromColumn": "CustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "930316a3-701f-46ba-8e96-262c3375b3c9",
+        "fromTable": "Sales",
+        "fromColumn": "ProductKey",
+        "toTable": "Product",
+        "toColumn": "ProductKey"
+      }
+    ],
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Version": "1.0.0",
+            "Language": "en-US",
+            "DynamicImprovement": "HighConfidence"
+          },
+          "contentType": "json"
+        }
+      },
+      {
+        "name": "de-DE"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "Perspective 1",
+        "tables": [
+          {
+            "name": "Customer",
+            "columns": [
+              {
+                "name": "Address Line 1"
+              },
+              {
+                "name": "Address Line 2"
+              },
+              {
+                "name": "Cars Owned"
+              },
+              {
+                "name": "Children At Home"
+              },
+              {
+                "name": "City"
+              },
+              {
+                "name": "Company Name"
+              },
+              {
+                "name": "CountryRegion"
+              },
+              {
+                "name": "Customer Code"
+              },
+              {
+                "name": "Customer Type"
+              },
+              {
+                "name": "CustomerKey"
+              },
+              {
+                "name": "Date First Purchase"
+              },
+              {
+                "name": "Education"
+              },
+              {
+                "name": "Gender"
+              },
+              {
+                "name": "House Ownership"
+              },
+              {
+                "name": "Marital Status"
+              },
+              {
+                "name": "Name"
+              },
+              {
+                "name": "Phone"
+              },
+              {
+                "name": "State"
+              },
+              {
+                "name": "Title"
+              },
+              {
+                "name": "Total Children"
+              },
+              {
+                "name": "Yearly Income"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "name": "Role 1",
+        "members": [
+          {
+            "memberName": "phil@contoso.com"
+          },
+          {
+            "memberName": "analysts@contoso.com",
+            "identityProvider": "AzureAD",
+            "memberType": "group"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "Customer",
+            "metadataPermission": "read"
+          },
+          {
+            "name": "Product",
+            "metadataPermission": "none"
+          },
+          {
+            "name": "Date",
+            "filterExpression": "[Calendar Year] > 2009"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "[SourceUrl]",
+        "kind": "m",
+        "expression": "\"https://raw.githubusercontent.com/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=false]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[Version]",
+        "kind": "m",
+        "expression": "\"VERSION\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[CI-Branch]",
+        "kind": "m",
+        "expression": "\"CI-Branch\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[CI-Commit]",
+        "kind": "m",
+        "expression": "\"CI-Commit\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[CI-BuildNumber]",
+        "kind": "m",
+        "expression": "\"CI-BuildNumber\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[CI-BuildReason]",
+        "kind": "m",
+        "expression": "\"CI-BuildReason\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[Environment]",
+        "kind": "m",
+        "expression": "\"ENVIRONMENT\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[FilterDate]",
+        "kind": "m",
+        "expression": "#date(2009, 1, 1) meta [IsParameterQuery=true, Type=\"Date\", IsParameterQueryRequired=false]",
+        "queryGroup": "Parameters"
+      },
+      {
+        "name": "[PBITOOLS_VERSION]",
+        "kind": "m",
+        "expression": "\"PBITOOLS_VERSION\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "queryGroup": "Parameters"
+      }
+    ],
+    "queryGroups": [
+      {
+        "folder": "Parameters",
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.106.883.0 (22.06)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Product\",\"Date\",\"Customer\",\"Promotion\",\"Sales\",\"Store\",\"[SourceUrl]\",\"Info\",\"[Version]\",\"[GH-SHA]\",\"[GH-RunId]\",\"[Environment]\",\"[GH-Branch]\",\"[FilterDate]\",\"[PBITOOLS_VERSION]\"]"
+      },
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\"IgnoreInferredObjects\":true,\"IgnoreInferredProperties\":true,\"IgnoreTimestamps\":true,\"SplitMultilineStrings\":true,\"PrefixFilenames\":false,\"LocalTranslations\":false,\"LocalPerspectives\":false,\"LocalRelationships\":false,\"Levels\":[\"Data Sources\",\"Perspectives\",\"Relationships\",\"Roles\",\"Shared Expressions\",\"Tables\",\"Tables/Calculation Items\",\"Tables/Columns\",\"Tables/Hierarchies\",\"Tables/Measures\",\"Tables/Partitions\",\"Translations\"]}"
+      }
+    ]
+  }
+}
