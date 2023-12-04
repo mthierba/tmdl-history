@@ -15,7 +15,6 @@ table Date
 			in
 			    #"Changed Type1"
 
-
 	column 'Asia Season'
 		dataType: String
 		isDataTypeInferred: false

@@ -12,7 +12,6 @@ table Product
 			in
 			    #"Changed Type"
 
-
 	column Brand
 		dataType: String
 		isDataTypeInferred: false

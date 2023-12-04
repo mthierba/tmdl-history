@@ -21,7 +21,6 @@ table Calendar
 			    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 12 ) + 1
 			) 
 
-
 	column Date
 		dataType: DateTime
 		formatString:= General Date
@@ -118,7 +117,6 @@ table Calendar
 		  "name": "SummarizationSetBy",
 		  "value": "Automatic"
 		}
-
 
 	extendedProperty String = Lorem ipsum
 

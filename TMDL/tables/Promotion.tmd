@@ -13,7 +13,6 @@ table Promotion
 			in
 			    #"Parsed Date"
 
-
 	column Discount
 		dataType: Double
 		isDataTypeInferred: false
