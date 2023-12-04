@@ -6,6 +6,5 @@ culture 'en-US'
 			  "Language": "en-US",
 			  "DynamicImprovement": "HighConfidence"
 			}
-
 		contentType: Json
 

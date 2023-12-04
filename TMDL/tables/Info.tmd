@@ -25,7 +25,6 @@ table Info
 			in
 			    Source
 
-
 	measure Branch = LOOKUPVALUE(Info[Text], Info[Label], "Branch")
 
 	measure 'Data Updated (UTC)' = LOOKUPVALUE(Info[Timestamp], Info[Label], "Data Updated")

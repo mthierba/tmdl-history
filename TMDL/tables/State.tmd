@@ -10,7 +10,6 @@ table State
 			    "State", [Value]
 			)
 
-
 	measure Cylinder = SELECTEDVALUE( State[State] )
 		formatString:= 0
 		KPI:

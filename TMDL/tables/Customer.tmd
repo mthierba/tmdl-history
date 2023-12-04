@@ -13,7 +13,6 @@ table Customer
 			in
 			    #"Parsed Date"
 
-
 	column 'Address Line 1'
 		dataType: String
 		displayFolder: '"Folder 2!"'

@@ -15,20 +15,17 @@ table 'Time Intelligence'
 			    DATESQTD ( 'Date'[Date] )
 			)
 
-
 		calculationItem YTD =
 			CALCULATE (
 			    SELECTEDMEASURE (),
 			    DATESYTD ( 'Date'[Date] )
 			)
 
-
 		calculationItem SPLY =
 			CALCULATE (
 			    SELECTEDMEASURE (),
 			    SAMEPERIODLASTYEAR ( 'Date'[Date] )
 			)
-
 
 	column Ordinal
 		dataType: Int64

@@ -14,7 +14,6 @@ table Sales
 			    Filtered_Date = if #"[FilterDate]" = null then #"Parsed Date" else Table.SelectRows(#"Parsed Date", each [Order Date] >= #"[FilterDate]")
 			in
 			    Filtered_Date
-
 	ordinal: 7
 
 	partition 'Sales-fae7d1f1-9ede-41b7-b875-8dda67703e5e' = M
@@ -35,7 +34,6 @@ table Sales
 			    ),
 			    "Line Margin", [Line Amount] - [Line Cost]
 			)
-
 
 	measure 'Sales Amount' = SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )
 
@@ -62,11 +60,9 @@ table Sales
 			    "Customer Name", RELATED ( Customer[Name] )
 			)
 
-
 		formatStringDefinition =
 			IF ( SELECTEDMEASURE() <= 1E6, "#0,.00", "#0,,.00 M" )
 			
-
 
 	measure 'Sales Quantity' = SUM ( Sales[Quantity] )
 		formatString:= #,##0
@@ -91,7 +87,6 @@ table Sales
 			    "Product Name", RELATED ( 'Product'[Product Name] ),
 			    "Manufacturer", RELATED ( 'Product'[Manufacturer] )
 			)
-
 
 	column CurrencyKey
 		dataType: Int64

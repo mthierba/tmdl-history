@@ -12,7 +12,6 @@ table Parameter
 			    ("Color", NAMEOF('Product'[Color]), 3)
 			}
 
-
 	column Parameter
 		dataType: String
 		isNameInferred: false
@@ -42,7 +41,6 @@ table Parameter
 			  "kind": 2,
 			  "version": 3
 			}
-
 
 	column 'Parameter Order'
 		dataType: Int64

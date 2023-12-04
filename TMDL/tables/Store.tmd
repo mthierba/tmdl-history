@@ -13,7 +13,6 @@ table Store
 			in
 			    #"Parsed Date"
 
-
 	column 'Address Line 1'
 		dataType: String
 		isDataTypeInferred: false
