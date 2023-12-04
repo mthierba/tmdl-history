@@ -1,4 +1,4 @@
-dataSource 'Structured Data Source'
+﻿dataSource 'Structured Data Source'
 	connectionDetails:
 		address:
 			database: Database01

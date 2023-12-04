@@ -1,4 +1,4 @@
-expression [SourceUrl] = "https://raw.githubusercontent.com/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+﻿expression [SourceUrl] = "https://raw.githubusercontent.com/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
 	queryGroup: Parameters
 
 expression [Version] = "VERSION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]

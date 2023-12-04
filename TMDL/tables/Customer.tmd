@@ -1,4 +1,4 @@
-table Customer
+﻿table Customer
 	ordinal: 1
 
 	partition Customer = M

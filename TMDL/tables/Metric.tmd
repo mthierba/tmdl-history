@@ -1,4 +1,4 @@
-table Metric
+﻿table Metric
 	ordinal: 4
 
 	partition Partition = CalculationGroup

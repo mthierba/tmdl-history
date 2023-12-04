@@ -1,4 +1,4 @@
-model Model
+﻿model Model
 	compatibilityLevel: 1604
 	culture: en-US
 	dataAccessOptions:

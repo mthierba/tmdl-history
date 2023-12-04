@@ -1,4 +1,4 @@
-table Promotion
+﻿table Promotion
 	ordinal: 6
 
 	partition Promotion = M
