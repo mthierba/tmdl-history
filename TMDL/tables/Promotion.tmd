@@ -27,7 +27,7 @@ table Promotion
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "End Date"
+		sourceColumn: End Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -37,7 +37,7 @@ table Promotion
 	column 'Promotion Category'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Promotion Category"
+		sourceColumn: Promotion Category
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -45,7 +45,7 @@ table Promotion
 	column 'Promotion Code'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Promotion Code"
+		sourceColumn: Promotion Code
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -53,7 +53,7 @@ table Promotion
 	column 'Promotion Type'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Promotion Type"
+		sourceColumn: Promotion Type
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -81,7 +81,7 @@ table Promotion
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Start Date"
+		sourceColumn: Start Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic

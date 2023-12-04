@@ -10,22 +10,22 @@ table 'Time Intelligence'
 		calculationItem CY = SELECTEDMEASURE ()
 
 		calculationItem QTD =
-			CALCULATE (
-			    SELECTEDMEASURE (),
-			    DATESQTD ( 'Date'[Date] )
-			)
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    DATESQTD ( 'Date'[Date] )
+				)
 
 		calculationItem YTD =
-			CALCULATE (
-			    SELECTEDMEASURE (),
-			    DATESYTD ( 'Date'[Date] )
-			)
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    DATESYTD ( 'Date'[Date] )
+				)
 
 		calculationItem SPLY =
-			CALCULATE (
-			    SELECTEDMEASURE (),
-			    SAMEPERIODLASTYEAR ( 'Date'[Date] )
-			)
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+				)
 
 	column Ordinal
 		dataType: Int64

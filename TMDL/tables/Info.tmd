@@ -1,7 +1,7 @@
 table Info
 	ordinal: 3
 
-	partition 'Info-f44d74ec-0372-4982-8ace-63656474683c' = M
+	partition Info-f44d74ec-0372-4982-8ace-63656474683c = M
 		mode: Import
 		expression:=
 			let

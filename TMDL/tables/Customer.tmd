@@ -15,9 +15,9 @@ table Customer
 
 	column 'Address Line 1'
 		dataType: String
-		displayFolder: '"Folder 2!"'
+		displayFolder: ""Folder 2!""
 		isDataTypeInferred: false
-		sourceColumn: "Address Line 1"
+		sourceColumn: Address Line 1
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -26,7 +26,7 @@ table Customer
 		dataType: String
 		displayFolder: "With Space "
 		isDataTypeInferred: false
-		sourceColumn: "Address Line 2"
+		sourceColumn: Address Line 2
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -35,7 +35,7 @@ table Customer
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Birth Date"
+		sourceColumn: Birth Date
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -44,9 +44,9 @@ table Customer
 
 	column 'Cars Owned'
 		dataType: Int64
-		displayFolder: ''Folder 1'\"Sub-Folder"'
+		displayFolder: 'Folder 1'\"Sub-Folder"
 		isDataTypeInferred: false
-		sourceColumn: "Cars Owned"
+		sourceColumn: Cars Owned
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -56,7 +56,7 @@ table Customer
 	column 'Children At Home'
 		dataType: Int64
 		isDataTypeInferred: false
-		sourceColumn: "Children At Home"
+		sourceColumn: Children At Home
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -75,7 +75,7 @@ table Customer
 	column 'Company Name'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Company Name"
+		sourceColumn: Company Name
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -102,7 +102,7 @@ table Customer
 		dataCategory: PostalCode
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Customer Code"
+		sourceColumn: Customer Code
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -110,7 +110,7 @@ table Customer
 	column 'Customer Type'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Customer Type"
+		sourceColumn: Customer Type
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -130,7 +130,7 @@ table Customer
 		dataType: DateTime
 		formatString:= Long Date
 		isDataTypeInferred: false
-		sourceColumn: "Date First Purchase"
+		sourceColumn: Date First Purchase
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -156,7 +156,7 @@ table Customer
 	column 'House Ownership'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "House Ownership"
+		sourceColumn: House Ownership
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -164,7 +164,7 @@ table Customer
 	column 'Marital Status'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Marital Status"
+		sourceColumn: Marital Status
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -214,7 +214,7 @@ table Customer
 	column 'Total Children'
 		dataType: Int64
 		isDataTypeInferred: false
-		sourceColumn: "Total Children"
+		sourceColumn: Total Children
 		summarizeBy: Sum
 
 		annotation SummarizationSetBy = Automatic
@@ -225,7 +225,7 @@ table Customer
 		dataType: Double
 		formatString:= #,0.00
 		isDataTypeInferred: false
-		sourceColumn: "Yearly Income"
+		sourceColumn: Yearly Income
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic

@@ -37,10 +37,10 @@ table Parameter
 		annotation SummarizationSetBy = Automatic
 
 		extendedProperty ParameterMetadata =
-			{
-			  "kind": 2,
-			  "version": 3
-			}
+				{
+				  "kind": 2,
+				  "version": 3
+				}
 
 	column 'Parameter Order'
 		dataType: Int64

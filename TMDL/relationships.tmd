@@ -1,25 +1,25 @@
-relationship '8c8b00e4-961a-489c-9a8b-812542526d79'
+relationship 8c8b00e4-961a-489c-9a8b-812542526d79
 	fromColumn: Sales.'Order Date'
 	toColumn: Date.Date
 
-relationship 'cdc1f678-516d-402a-8bd3-13b1df211879'
+relationship cdc1f678-516d-402a-8bd3-13b1df211879
 	fromColumn: Sales.'Delivery Date'
 	isActive: false
 	toColumn: Date.Date
 
-relationship '56488b0e-a821-4cfc-bdd3-8cc68f36b536'
+relationship 56488b0e-a821-4cfc-bdd3-8cc68f36b536
 	fromColumn: Sales.StoreKey
 	toColumn: Store.StoreKey
 
-relationship '2ea9d16c-6bf3-4169-92f2-16b3d4c7e1b5'
+relationship 2ea9d16c-6bf3-4169-92f2-16b3d4c7e1b5
 	fromColumn: Sales.PromotionKey
 	toColumn: Promotion.PromotionKey
 
-relationship 'deca5bcb-ea8f-467a-b790-fa78ea247d57'
+relationship deca5bcb-ea8f-467a-b790-fa78ea247d57
 	fromColumn: Sales.CustomerKey
 	toColumn: Customer.CustomerKey
 
-relationship '930316a3-701f-46ba-8e96-262c3375b3c9'
+relationship 930316a3-701f-46ba-8e96-262c3375b3c9
 	fromColumn: Sales.ProductKey
 	toColumn: Product.ProductKey
 

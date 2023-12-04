@@ -47,7 +47,7 @@ table Product
 	column 'Product Code'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Product Code"
+		sourceColumn: Product Code
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -55,7 +55,7 @@ table Product
 	column 'Product Name'
 		dataType: String
 		isDataTypeInferred: false
-		sourceColumn: "Product Name"
+		sourceColumn: Product Name
 		summarizeBy: None
 
 		annotation SummarizationSetBy = Automatic
@@ -79,7 +79,7 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
-	hierarchy 'Category-Subcategory'
+	hierarchy Category-Subcategory
 
 		level Category
 			column: Category

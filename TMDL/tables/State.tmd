@@ -1,7 +1,7 @@
 table State
 	ordinal: 12
 
-	partition 'State-94755ca3-e050-488b-8105-9e73ffcf8711' = Calculated
+	partition State-94755ca3-e050-488b-8105-9e73ffcf8711 = Calculated
 		mode: Import
 		expression:=
 			
@@ -36,10 +36,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Five Bars Colored"
+			statusGraphic: Five Bars Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Five Bars Colored"
+			trendGraphic: Five Bars Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -47,10 +47,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Standard Arrow"
+			statusGraphic: Standard Arrow
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Standard Arrow"
+			trendGraphic: Standard Arrow
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -58,10 +58,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Three Symbols Uncircled Colored"
+			statusGraphic: Three Symbols Uncircled Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Three Symbols Uncircled Colored"
+			trendGraphic: Three Symbols Uncircled Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -69,10 +69,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Traffic Light"
+			statusGraphic: Traffic Light
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Traffic Light"
+			trendGraphic: Traffic Light
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -80,10 +80,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Traffic Light - Single"
+			statusGraphic: Traffic Light - Single
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Traffic Light - Single"
+			trendGraphic: Traffic Light - Single
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -91,10 +91,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Variance Arrow"
+			statusGraphic: Variance Arrow
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Variance Arrow"
+			trendGraphic: Variance Arrow
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -102,10 +102,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Status Arrow - Ascending"
+			statusGraphic: Status Arrow - Ascending
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Status Arrow - Ascending"
+			trendGraphic: Status Arrow - Ascending
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -113,10 +113,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Status Arrow - Descending"
+			statusGraphic: Status Arrow - Descending
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Status Arrow - Descending"
+			trendGraphic: Status Arrow - Descending
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -124,10 +124,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Traffic Light - Multiple"
+			statusGraphic: Traffic Light - Multiple
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Traffic Light - Multiple"
+			trendGraphic: Traffic Light - Multiple
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -135,10 +135,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Five Boxes Colored"
+			statusGraphic: Five Boxes Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Five Boxes Colored"
+			trendGraphic: Five Boxes Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -157,10 +157,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Gauge - Ascending"
+			statusGraphic: Gauge - Ascending
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Gauge - Ascending"
+			trendGraphic: Gauge - Ascending
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -168,10 +168,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Gauge - Descending"
+			statusGraphic: Gauge - Descending
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Gauge - Descending"
+			trendGraphic: Gauge - Descending
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -179,10 +179,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Reversed Gauge"
+			statusGraphic: Reversed Gauge
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Reversed Gauge"
+			trendGraphic: Reversed Gauge
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -190,10 +190,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Reversed status arrow"
+			statusGraphic: Reversed status arrow
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Reversed status arrow"
+			trendGraphic: Reversed status arrow
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -201,10 +201,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Road Signs"
+			statusGraphic: Road Signs
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Road Signs"
+			trendGraphic: Road Signs
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -234,10 +234,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Smiley Face"
+			statusGraphic: Smiley Face
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Smiley Face"
+			trendGraphic: Smiley Face
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -245,10 +245,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Status Arrow"
+			statusGraphic: Status Arrow
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Status Arrow"
+			trendGraphic: Status Arrow
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -267,10 +267,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Three Triangles"
+			statusGraphic: Three Triangles
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Three Triangles"
+			trendGraphic: Three Triangles
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -278,10 +278,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Three Circles Colored"
+			statusGraphic: Three Circles Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Three Circles Colored"
+			trendGraphic: Three Circles Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -289,10 +289,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Three Flags Colored"
+			statusGraphic: Three Flags Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Three Flags Colored"
+			trendGraphic: Three Flags Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
@@ -300,10 +300,10 @@ table State
 		formatString:= 0
 		KPI:
 			statusExpression:= SELECTEDVALUE ( State[State] )
-			statusGraphic: "Three Stars Colored"
+			statusGraphic: Three Stars Colored
 			targetExpression:= SELECTEDVALUE ( State[State] )
 			trendExpression:= SELECTEDVALUE ( State[State] )
-			trendGraphic: "Three Stars Colored"
+			trendGraphic: Three Stars Colored
 
 		annotation Format = <Format Format="NumberWhole" Accuracy="0" />
 
