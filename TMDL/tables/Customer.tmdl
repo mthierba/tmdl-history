@@ -36,6 +36,7 @@
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Number of chldren at home
 	column 'Children At Home'
 		dataType: Int64
 		summarizeBy: Sum

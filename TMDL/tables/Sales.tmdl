@@ -18,6 +18,7 @@
 
 	measure Margin = [Sales Amount] - [Cost]
 		formatString = "$"#,0
+		displayFolder: Measures
 
 		detailRowsDefinition =
 				ADDCOLUMNS (
@@ -33,6 +34,7 @@
 		annotation PBI_ChangedProperties = ["FormatString"]
 
 	measure 'Sales Amount' = SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )
+		displayFolder: Measures
 
 		detailRowsDefinition =
 				SELECTCOLUMNS (
@@ -63,9 +65,11 @@
 
 	measure 'Sales Quantity' = SUM ( Sales[Quantity] )
 		formatString = #,##0
+		displayFolder: Measures
 
 	measure Cost = SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )
 		formatString = "$"#,0
+		displayFolder: Measures
 
 		detailRowsDefinition =
 				SELECTCOLUMNS (
