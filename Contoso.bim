@@ -95,6 +95,7 @@
           {
             "name": "Children At Home",
             "dataType": "int64",
+            "description": "Number of chldren at home",
             "sourceColumn": "Children At Home",
             "summarizeBy": "sum",
             "annotations": [
@@ -1624,6 +1625,7 @@
             "name": "Margin",
             "expression": "[Sales Amount] - [Cost]",
             "formatString": "\"$\"#,0",
+            "displayFolder": "Measures",
             "detailRowsDefinition": {
               "expression": [
                 "ADDCOLUMNS (",
@@ -1649,6 +1651,7 @@
           {
             "name": "Sales Amount",
             "expression": "SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )",
+            "displayFolder": "Measures",
             "detailRowsDefinition": {
               "expression": [
                 "SELECTCOLUMNS (",
@@ -1690,12 +1693,14 @@
           {
             "name": "Sales Quantity",
             "expression": "SUM ( Sales[Quantity] )",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "displayFolder": "Measures"
           },
           {
             "name": "Cost",
             "expression": "SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )",
             "formatString": "\"$\"#,0",
+            "displayFolder": "Measures",
             "detailRowsDefinition": {
               "expression": [
                 "SELECTCOLUMNS (",
@@ -2997,7 +3002,46 @@
         }
       },
       {
-        "name": "de-DE"
+        "name": "de-DE",
+        "translations": {
+          "model": {
+            "name": "Model",
+            "tables": [
+              {
+                "name": "Customer",
+                "translatedCaption": "Kunde",
+                "columns": [
+                  {
+                    "name": "Children At Home",
+                    "translatedDescription": "Zahl der Kinder"
+                  },
+                  {
+                    "name": "City",
+                    "translatedCaption": "Stadt"
+                  },
+                  {
+                    "name": "Company Name",
+                    "translatedCaption": "Firma"
+                  },
+                  {
+                    "name": "Phone",
+                    "translatedCaption": "Telefon"
+                  }
+                ]
+              },
+              {
+                "name": "Sales",
+                "measures": [
+                  {
+                    "name": "Sales Amount",
+                    "translatedCaption": "Verkauspreis",
+                    "translatedDisplayFolder": "Formeln"
+                  }
+                ]
+              }
+            ]
+          }
+        }
       }
     ],
     "perspectives": [

@@ -1,2 +1,18 @@
 ﻿culture de-DE
+	translations:
+		model Model
+			table Customer
+				caption: Kunde
+				column 'Children At Home'
+					description: Zahl der Kinder
+				column City
+					caption: Stadt
+				column 'Company Name'
+					caption: Firma
+				column Phone
+					caption: Telefon
+			table Sales
+				measure 'Sales Amount'
+					caption: Verkauspreis
+					displayFolder: Formeln
 
