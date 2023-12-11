@@ -1,51 +1,51 @@
 ﻿table Product
 
 	column Brand
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Brand
 
 		annotation SummarizationSetBy = Automatic
 
 	column Category
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Category
 
 		annotation SummarizationSetBy = Automatic
 
 	column Color
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Color
 
 		annotation SummarizationSetBy = Automatic
 
 	column Manufacturer
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Manufacturer
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Product Code'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Product Code
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Product Name'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Product Name
 
 		annotation SummarizationSetBy = Automatic
 
 	column ProductKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: ProductKey
 
 		annotation SummarizationSetBy = Automatic
@@ -53,8 +53,8 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Subcategory
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Subcategory
 
 		annotation SummarizationSetBy = Automatic
@@ -67,14 +67,14 @@
 		level Subcategory
 			column: Subcategory
 
-	partition Product = M
-		mode: Import
-		expression =
-			let
-			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Product.csv"]),
-			    Csv = Csv.Document(Source),
-			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}, {"Product Code", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Subcategory", type text}, {"Category", type text}, {"Color", type text}})
-			in
-			    #"Changed Type"
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Product.csv"]),
+				    Csv = Csv.Document(Source),
+				    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}, {"Product Code", type text}, {"Product Name", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Subcategory", type text}, {"Category", type text}, {"Color", type text}})
+				in
+				    #"Changed Type"
 

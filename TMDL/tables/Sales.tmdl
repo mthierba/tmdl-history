@@ -1,9 +1,10 @@
 ﻿table Sales
-	refreshPolicy:
-		policyType: Basic
-		rollingWindowGranularity: Year
+
+	refreshPolicy
+		policyType: basic
+		rollingWindowGranularity: year
 		rollingWindowPeriods: 5
-		incrementalGranularity: Day
+		incrementalGranularity: day
 		incrementalPeriods: 7
 		sourceExpression =
 			let
@@ -17,7 +18,7 @@
 			    Filtered_Date
 
 	measure Margin = [Sales Amount] - [Cost]
-		formatString = "$"#,0
+		formatString: "$"#,0
 		displayFolder: Measures
 
 		detailRowsDefinition =
@@ -55,20 +56,18 @@
 				    "Customer Name", RELATED ( Customer[Name] )
 				)
 
-		formatStringDefinition =
-				IF ( SELECTEDMEASURE() <= 1E6, "#0,.00", "#0,,.00 M" )
-				
+		formatStringDefinition = IF ( SELECTEDMEASURE() <= 1E6, "#0,.00", "#0,,.00 M" )
 
 		annotation PBI_ChangedProperties = ["FormatString"]
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Sales Quantity' = SUM ( Sales[Quantity] )
-		formatString = #,##0
+		formatString: #,##0
 		displayFolder: Measures
 
 	measure Cost = SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )
-		formatString = "$"#,0
+		formatString: "$"#,0
 		displayFolder: Measures
 
 		detailRowsDefinition =
@@ -90,9 +89,9 @@
 		annotation PBI_ChangedProperties = ["FormatString"]
 
 	column CurrencyKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Count
+		summarizeBy: count
 		sourceColumn: CurrencyKey
 
 		annotation SummarizationSetBy = Automatic
@@ -100,9 +99,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column CustomerKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: CustomerKey
 
 		annotation SummarizationSetBy = Automatic
@@ -110,10 +109,10 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Delivery Date'
-		dataType: DateTime
+		dataType: dateTime
 		isHidden
-		formatString = Long Date
-		summarizeBy: None
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Delivery Date
 
 		annotation SummarizationSetBy = Automatic
@@ -121,10 +120,10 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Net Price'
-		dataType: Double
+		dataType: double
 		isHidden
-		formatString = \$#,0.00;(\$#,0.00);\$#,0.00
-		summarizeBy: Sum
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		summarizeBy: sum
 		sourceColumn: Net Price
 
 		annotation SummarizationSetBy = Automatic
@@ -132,10 +131,10 @@
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column 'Order Date'
-		dataType: DateTime
+		dataType: dateTime
 		isHidden
-		formatString = Long Date
-		summarizeBy: None
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Order Date
 
 		annotation SummarizationSetBy = Automatic
@@ -143,9 +142,9 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Order Line Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Order Line Number
 
 		annotation SummarizationSetBy = Automatic
@@ -153,17 +152,17 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Order Number'
-		dataType: String
+		dataType: string
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: Order Number
 
 		annotation SummarizationSetBy = Automatic
 
 	column OrderDateKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Count
+		summarizeBy: count
 		sourceColumn: OrderDateKey
 
 		annotation SummarizationSetBy = Automatic
@@ -171,9 +170,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column ProductKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: ProductKey
 
 		annotation SummarizationSetBy = Automatic
@@ -181,9 +180,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column PromotionKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: PromotionKey
 
 		annotation SummarizationSetBy = Automatic
@@ -191,9 +190,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Quantity
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Quantity
 
 		annotation SummarizationSetBy = Automatic
@@ -201,9 +200,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column StoreKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: StoreKey
 
 		annotation SummarizationSetBy = Automatic
@@ -211,10 +210,10 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Unit Cost'
-		dataType: Double
+		dataType: double
 		isHidden
-		formatString = \$#,0.00;(\$#,0.00);\$#,0.00
-		summarizeBy: Sum
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		summarizeBy: sum
 		sourceColumn: Unit Cost
 
 		annotation SummarizationSetBy = Automatic
@@ -222,10 +221,10 @@
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column 'Unit Discount'
-		dataType: Double
+		dataType: double
 		isHidden
-		formatString = \$#,0.00;(\$#,0.00);\$#,0.00
-		summarizeBy: Sum
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		summarizeBy: sum
 		sourceColumn: Unit Discount
 
 		annotation SummarizationSetBy = Automatic
@@ -233,10 +232,10 @@
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column 'Unit Price'
-		dataType: Double
+		dataType: double
 		isHidden
-		formatString = \$#,0.00;(\$#,0.00);\$#,0.00
-		summarizeBy: Sum
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		summarizeBy: sum
 		sourceColumn: Unit Price
 
 		annotation SummarizationSetBy = Automatic
@@ -244,41 +243,41 @@
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column SalesAmount = Sales[Quantity] * Sales[Unit Price]
-		dataType: Double
-		formatString = 0.00
+		dataType: double
+		formatString: 0.00
 		lineageTag: 6c85b809-bceb-4982-a951-055e754fedbc
-		summarizeBy: Sum
+		summarizeBy: sum
 		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
-	column TotalProductCost = Sales[Quantity] * Sales[Unit Cost] 
-		dataType: Double
-		formatString = 0.00
+	column TotalProductCost = Sales[Quantity] * Sales[Unit Cost]
+		dataType: double
+		formatString: 0.00
 		lineageTag: 7118d6d5-46a3-4d52-9267-fcff6ce17e6a
-		summarizeBy: Sum
+		summarizeBy: sum
 		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
-	column GrossMargin = Sales[SalesAmount] - Sales[TotalProductCost] 
-		dataType: Double
-		formatString = 0.00
+	column GrossMargin = Sales[SalesAmount] - Sales[TotalProductCost]
+		dataType: double
+		formatString: 0.00
 		lineageTag: 516e4bdd-cd0d-4987-851e-30f2edaaff0a
-		summarizeBy: Sum
+		summarizeBy: sum
 		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column GrossMarginPct = DIVIDE ( Sales[GrossMargin], Sales[SalesAmount] )
-		dataType: Double
-		formatString = 0%;-0%;0%
+		dataType: double
+		formatString: 0%;-0%;0%
 		lineageTag: 6a8cb3b0-8f49-4e2b-af64-a77bc59c2f52
-		summarizeBy: Sum
+		summarizeBy: sum
 		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Sales-fae7d1f1-9ede-41b7-b875-8dda67703e5e = M
-		mode: Import
+	partition Sales-fae7d1f1-9ede-41b7-b875-8dda67703e5e = m
+		mode: import
 

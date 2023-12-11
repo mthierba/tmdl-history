@@ -2,16 +2,16 @@
 	dataCategory: Time
 
 	column 'Asia Season'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Asia Season
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Year Month Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Calendar Year Month Number
 
 		annotation SummarizationSetBy = Automatic
@@ -19,17 +19,17 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Calendar Year Month'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Calendar Year Month
 		sortByColumn: 'Calendar Year Month Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Year Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Calendar Year Number
 
 		annotation SummarizationSetBy = Automatic
@@ -37,10 +37,10 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Calendar Year Quarter Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
 		dataCategory: PostalCode
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Calendar Year Quarter Number
 
 		annotation SummarizationSetBy = Automatic
@@ -48,26 +48,26 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Calendar Year Quarter'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Calendar Year Quarter
 		sortByColumn: 'Calendar Year Quarter Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Year'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Calendar Year
 		sortByColumn: 'Calendar Year Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column Date
-		dataType: DateTime
+		dataType: dateTime
 		isKey
-		formatString = Long Date
-		summarizeBy: None
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
@@ -75,9 +75,9 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column DateKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Count
+		summarizeBy: count
 		sourceColumn: DateKey
 
 		annotation SummarizationSetBy = Automatic
@@ -85,9 +85,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Day of Week Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Day of Week Number
 
 		annotation SummarizationSetBy = Automatic
@@ -95,24 +95,24 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Day of Week'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Day of Week
 		sortByColumn: 'Day of Week Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Europe Season'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Europe Season
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Month Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Fiscal Month Number
 
 		annotation SummarizationSetBy = Automatic
@@ -120,17 +120,17 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Month'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Fiscal Month
 		sortByColumn: 'Fiscal Month Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Quarter Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Fiscal Quarter Number
 
 		annotation SummarizationSetBy = Automatic
@@ -138,17 +138,17 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Quarter'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Fiscal Quarter
 		sortByColumn: 'Fiscal Quarter Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Fiscal Year Number
 
 		annotation SummarizationSetBy = Automatic
@@ -156,10 +156,10 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Year Quarter Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
 		dataCategory: PostalCode
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Fiscal Year Quarter Number
 
 		annotation SummarizationSetBy = Automatic
@@ -167,40 +167,40 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Year Quarter'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Fiscal Year Quarter
 		sortByColumn: 'Fiscal Year Quarter Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Fiscal Year
 		sortByColumn: 'Fiscal Year Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Holiday Name'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Holiday Name
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Is Holiday'
-		dataType: Boolean
-		formatString = "TRUE";"TRUE";"FALSE"
-		summarizeBy: None
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		summarizeBy: none
 		sourceColumn: Is Holiday
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Month Number'
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Month Number
 
 		annotation SummarizationSetBy = Automatic
@@ -208,37 +208,37 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Month
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Month
 		sortByColumn: 'Month Number'
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'North America Season'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: North America Season
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Working Day'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Working Day
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Date = M
-		mode: Import
-		expression =
-			let
-			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Date.csv"]),
-			    Csv = Csv.Document(Source),
-			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DateKey", Int64.Type}, {"Calendar Year Number", Int64.Type}, {"Calendar Year", type text}, {"Calendar Year Quarter Number", Int64.Type}, {"Calendar Year Quarter", type text}, {"Calendar Year Month Number", Int64.Type}, {"Month Number", Int64.Type}, {"Month", type text}, {"Day of Week Number", Int64.Type}, {"Day of Week", type text}, {"Fiscal Year Number", Int64.Type}, {"Fiscal Year", type text}, {"Fiscal Quarter Number", Int64.Type}, {"Fiscal Quarter", type text}, {"Fiscal Year Quarter Number", Int64.Type}, {"Fiscal Year Quarter", type text}, {"Fiscal Month Number", Int64.Type}, {"Fiscal Month", type text}, {"Working Day", type text}, {"Is Holiday", Int64.Type}, {"Holiday Name", type text}, {"Europe Season", type text}, {"North America Season", type text}, {"Asia Season", type text}}),
-			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Date", each Date.From(DateTimeZone.From(_)), type date}}),
-			    #"Changed Type1" = Table.TransformColumnTypes(#"Parsed Date",{{"Is Holiday", type logical}})
-			in
-			    #"Changed Type1"
+	partition Date = m
+		mode: import
+		source =
+				let
+				    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Date.csv"]),
+				    Csv = Csv.Document(Source),
+				    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DateKey", Int64.Type}, {"Calendar Year Number", Int64.Type}, {"Calendar Year", type text}, {"Calendar Year Quarter Number", Int64.Type}, {"Calendar Year Quarter", type text}, {"Calendar Year Month Number", Int64.Type}, {"Month Number", Int64.Type}, {"Month", type text}, {"Day of Week Number", Int64.Type}, {"Day of Week", type text}, {"Fiscal Year Number", Int64.Type}, {"Fiscal Year", type text}, {"Fiscal Quarter Number", Int64.Type}, {"Fiscal Quarter", type text}, {"Fiscal Year Quarter Number", Int64.Type}, {"Fiscal Year Quarter", type text}, {"Fiscal Month Number", Int64.Type}, {"Fiscal Month", type text}, {"Working Day", type text}, {"Is Holiday", Int64.Type}, {"Holiday Name", type text}, {"Europe Season", type text}, {"North America Season", type text}, {"Asia Season", type text}}),
+				    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Date", each Date.From(DateTimeZone.From(_)), type date}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Parsed Date",{{"Is Holiday", type logical}})
+				in
+				    #"Changed Type1"
 
