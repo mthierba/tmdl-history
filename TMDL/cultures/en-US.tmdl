@@ -1,7 +1,6 @@
 ﻿culture en-US
 
-	linguisticMetadata
-		content =
+	linguisticMetadata =
 			{
 			  "Version": "1.0.0",
 			  "Language": "en-US",
