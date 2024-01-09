@@ -10,6 +10,7 @@ TMDL is currently in Public Preview.
 
 | TOM Version | TMDL Release | Max CompatLevel | Date | TE / pbi-tools | Notes |
 | ----------- | ------------ | ---- | ------------ | ----- | ----- |
+| 19.72.0     | Preview-8    | 1605 | 8-Dec-2023 | TBD / TBD |
 | 19.69.6.2   | Preview-7    | 1605 | 6-Nov-2023 | 2.21.1 / 1.0.0-rc.7 |
 | 19.69.2.2   | --           | 1604 | 16-Oct-2023 |
 | 19.69.2.1   | Preview-6    | 1604 | 9-Oct-2023 |

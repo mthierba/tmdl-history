@@ -1,31 +1,31 @@
 ﻿table Store
 
 	column 'Address Line 1'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Address Line 1
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Address Line 2'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Address Line 2
 
 		annotation SummarizationSetBy = Automatic
 
 	column City
-		dataType: String
+		dataType: string
 		dataCategory: City
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: City
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Close Date'
-		dataType: DateTime
-		formatString = Long Date
-		summarizeBy: None
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Close Date
 
 		annotation SummarizationSetBy = Automatic
@@ -33,32 +33,32 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Close Reason'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Close Reason
 
 		annotation SummarizationSetBy = Automatic
 
 	column Continent
-		dataType: String
+		dataType: string
 		dataCategory: Continent
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: Continent
 
 		annotation SummarizationSetBy = Automatic
 
 	column CountryRegion
-		dataType: String
+		dataType: string
 		dataCategory: Country
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: CountryRegion
 
 		annotation SummarizationSetBy = Automatic
 
 	/// Number of active store employees
 	column Employees
-		dataType: Int64
-		summarizeBy: Sum
+		dataType: int64
+		summarizeBy: sum
 		sourceColumn: Employees
 
 		annotation SummarizationSetBy = Automatic
@@ -66,9 +66,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Last Remodel Date'
-		dataType: DateTime
-		formatString = Long Date
-		summarizeBy: None
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Last Remodel Date
 
 		annotation SummarizationSetBy = Automatic
@@ -76,9 +76,9 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Open Date'
-		dataType: DateTime
-		formatString = Long Date
-		summarizeBy: None
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Open Date
 
 		annotation SummarizationSetBy = Automatic
@@ -86,8 +86,8 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Selling Area'
-		dataType: Double
-		summarizeBy: None
+		dataType: double
+		summarizeBy: none
 		sourceColumn: Selling Area
 
 		annotation SummarizationSetBy = Automatic
@@ -95,44 +95,44 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column State
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: State
 
 		annotation SummarizationSetBy = Automatic
 
 	column Status
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Status
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Store Name'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Store Name
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Store Phone'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Store Phone
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Store Type'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Store Type
 
 		annotation SummarizationSetBy = Automatic
 
 	column StoreKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: StoreKey
 
 		annotation SummarizationSetBy = Automatic
@@ -140,29 +140,29 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Zip Code Extension'
-		dataType: String
+		dataType: string
 		dataCategory: PostalCode
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: Zip Code Extension
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Zip Code'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Zip Code
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Store = M
-		mode: Import
-		expression =
-			let
-			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Store.csv"]),
-			    Csv = Csv.Document(Source),
-			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StoreKey", Int64.Type}, {"Store Type", type text}, {"Store Name", type text}, {"Status", type text}, {"Zip Code", type text}, {"Zip Code Extension", type text}, {"Store Phone", type text}, {"Continent", type text}, {"City", type text}, {"State", type text}, {"CountryRegion", type text}, {"Address Line 1", type text}, {"Address Line 2", type text}, {"Close Reason", type text}, {"Employees", Int64.Type}, {"Selling Area", type number}}),
-			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Open Date", each Date.From(DateTimeZone.From(_)), type date}, {"Close Date", each Date.From(DateTimeZone.From(_)), type date}, {"Last Remodel Date", each Date.From(DateTimeZone.From(_)), type date}})
-			in
-			    #"Parsed Date"
+	partition Store = m
+		mode: import
+		source =
+				let
+				    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Store.csv"]),
+				    Csv = Csv.Document(Source),
+				    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StoreKey", Int64.Type}, {"Store Type", type text}, {"Store Name", type text}, {"Status", type text}, {"Zip Code", type text}, {"Zip Code Extension", type text}, {"Store Phone", type text}, {"Continent", type text}, {"City", type text}, {"State", type text}, {"CountryRegion", type text}, {"Address Line 1", type text}, {"Address Line 2", type text}, {"Close Reason", type text}, {"Employees", Int64.Type}, {"Selling Area", type number}}),
+				    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Open Date", each Date.From(DateTimeZone.From(_)), type date}, {"Close Date", each Date.From(DateTimeZone.From(_)), type date}, {"Last Remodel Date", each Date.From(DateTimeZone.From(_)), type date}})
+				in
+				    #"Parsed Date"
 

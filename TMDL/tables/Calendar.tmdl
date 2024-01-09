@@ -2,10 +2,10 @@
 	dataCategory: Time
 
 	column Date
-		dataType: DateTime
+		dataType: dateTime
 		isKey
-		formatString = General Date
-		summarizeBy: None
+		formatString: General Date
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
 
@@ -16,8 +16,8 @@
 		annotation DataTypeAtRefresh = DateTime#####not a type
 
 	column 'Calendar Year'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Calendar Year]
 
@@ -28,8 +28,8 @@
 		annotation DataTypeAtRefresh = String#####not a type
 
 	column 'Month Name'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Month Name]
 		sortByColumn: 'Month Number'
@@ -41,9 +41,9 @@
 		annotation DataTypeAtRefresh = String#####not a type
 
 	column 'Month Number'
-		dataType: Int64
-		formatString = 0
-		summarizeBy: None
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Month Number]
 
@@ -54,8 +54,8 @@
 		annotation DataTypeAtRefresh = Int64#####not a type
 
 	column Weekday
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Weekday]
 
@@ -66,9 +66,9 @@
 		annotation DataTypeAtRefresh = String#####not a type
 
 	column 'Weekday number'
-		dataType: Int64
-		formatString = 0
-		summarizeBy: None
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Weekday number]
 
@@ -79,8 +79,8 @@
 		annotation DataTypeAtRefresh = Int64#####not a type
 
 	column Quarter
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Quarter]
 
@@ -90,24 +90,24 @@
 
 		annotation DataTypeAtRefresh = String#####not a type
 
-	partition Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c = Calculated
-		mode: Import
-		expression =
-			VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )
-			VAR MaxYear = YEAR ( MAX ( Sales[Order Date] ) )
-			RETURN
-			ADDCOLUMNS ( 
-			    FILTER ( 
-			        CALENDARAUTO( ), 
-			        AND ( YEAR ( [Date] ) >= MinYear, YEAR ( [Date] ) <= MaxYear )
-			    ),
-			    "Calendar Year", "CY " & YEAR ( [Date] ),
-			    "Month Name", FORMAT ( [Date], "mmmm" ),
-			    "Month Number", MONTH ( [Date] ),
-				"Weekday", FORMAT ( [Date], "dddd" ),
-			    "Weekday number", WEEKDAY( [Date] ),
-			    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 12 ) + 1
-			) 
+	partition Date-2ef6d0e2-da8d-4267-af29-e2df30c25f7c = calculated
+		mode: import
+		source =
+				VAR MinYear = YEAR ( MIN ( Sales[Order Date] ) )
+				VAR MaxYear = YEAR ( MAX ( Sales[Order Date] ) )
+				RETURN
+				ADDCOLUMNS (
+				    FILTER (
+				        CALENDARAUTO( ),
+				        AND ( YEAR ( [Date] ) >= MinYear, YEAR ( [Date] ) <= MaxYear )
+				    ),
+				    "Calendar Year", "CY " & YEAR ( [Date] ),
+				    "Month Name", FORMAT ( [Date], "mmmm" ),
+				    "Month Number", MONTH ( [Date] ),
+					"Weekday", FORMAT ( [Date], "dddd" ),
+				    "Weekday number", WEEKDAY( [Date] ),
+				    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 12 ) + 1
+				)
 
 	extendedProperty Json =
 			{

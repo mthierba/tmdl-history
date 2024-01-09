@@ -3,7 +3,7 @@
 	measure Branch = LOOKUPVALUE(Info[Text], Info[Label], "Branch")
 
 	measure 'Data Updated (UTC)' = LOOKUPVALUE(Info[Timestamp], Info[Label], "Data Updated")
-		formatString = dd-mmm-yyyy hh:mm
+		formatString: dd-mmm-yyyy hh:mm
 
 	measure 'Dataset Version' = LOOKUPVALUE(Info[Text], Info[Label], "Version")
 
@@ -22,9 +22,9 @@
 	measure 'Hello World' = "Hello World"
 
 	column Label
-		dataType: String
+		dataType: string
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: Label
 
 		annotation SummarizationSetBy = Automatic
@@ -32,9 +32,9 @@
 		annotation PBI_ChangedProperties = ["IsHidden"]
 
 	column Text
-		dataType: String
+		dataType: string
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: Text
 
 		annotation SummarizationSetBy = Automatic
@@ -42,37 +42,37 @@
 		annotation PBI_ChangedProperties = ["IsHidden"]
 
 	column Timestamp
-		dataType: DateTime
+		dataType: dateTime
 		isHidden
-		formatString = General Date
-		summarizeBy: None
+		formatString: General Date
+		summarizeBy: none
 		sourceColumn: Timestamp
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_ChangedProperties = ["IsHidden"]
 
-	partition Info-f44d74ec-0372-4982-8ace-63656474683c = M
-		mode: Import
-		expression =
-			let
-			    Source = #table(type table
-			    [
-			        #"Label"             = text, 
-			        #"Timestamp"         = datetime,
-			        #"Text"              = text
-			    ], 
-			    {
-			        { "Data Updated", DateTimeZone.RemoveZone(DateTimeZone.UtcNow()), null },
-			        { "Version",            null,   #"[Version]" },
-			        { "Branch",             null,   #"[CI-Branch]" },
-			        { "Commit ID",          null,   #"[CI-Commit]" },
-			        { "Build Number",       null,   #"[CI-BuildNumber]" },
-			        { "Build Reason",       null,   #"[CI-BuildReason]" },
-			        { "pbi-tools Version",  null,   #"[PBITOOLS_VERSION]" },
-			        { "Environment",        null,   #"[Environment]"}
-			    }
-			)
-			in
-			    Source
+	partition Info-f44d74ec-0372-4982-8ace-63656474683c = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table
+				    [
+				        #"Label"             = text,
+				        #"Timestamp"         = datetime,
+				        #"Text"              = text
+				    ],
+				    {
+				        { "Data Updated", DateTimeZone.RemoveZone(DateTimeZone.UtcNow()), null },
+				        { "Version",            null,   #"[Version]" },
+				        { "Branch",             null,   #"[CI-Branch]" },
+				        { "Commit ID",          null,   #"[CI-Commit]" },
+				        { "Build Number",       null,   #"[CI-BuildNumber]" },
+				        { "Build Reason",       null,   #"[CI-BuildReason]" },
+				        { "pbi-tools Version",  null,   #"[PBITOOLS_VERSION]" },
+				        { "Environment",        null,   #"[Environment]"}
+				    }
+				)
+				in
+				    Source
 

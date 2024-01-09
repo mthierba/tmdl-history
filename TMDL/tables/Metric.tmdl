@@ -14,21 +14,18 @@
 		calculationItem 'Total Cost' = [Cost]
 
 	column Metric
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Name
 		sortByColumn: Ordinal
 
 		annotation SummarizationSetBy = Automatic
 
 	column Ordinal
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: Sum
+		summarizeBy: sum
 		sourceColumn: Ordinal
 
 		annotation SummarizationSetBy = Automatic
-
-	partition Partition = CalculationGroup
-		mode: Import
 

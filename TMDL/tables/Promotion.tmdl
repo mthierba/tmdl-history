@@ -1,8 +1,8 @@
 ﻿table Promotion
 
 	column Discount
-		dataType: Double
-		summarizeBy: Sum
+		dataType: double
+		summarizeBy: sum
 		sourceColumn: Discount
 
 		annotation SummarizationSetBy = Automatic
@@ -10,9 +10,9 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'End Date'
-		dataType: DateTime
-		formatString = Long Date
-		summarizeBy: None
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: End Date
 
 		annotation SummarizationSetBy = Automatic
@@ -20,37 +20,37 @@
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Promotion Category'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Promotion Category
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Promotion Code'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Promotion Code
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Promotion Type'
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Promotion Type
 
 		annotation SummarizationSetBy = Automatic
 
 	column Promotion
-		dataType: String
-		summarizeBy: None
+		dataType: string
+		summarizeBy: none
 		sourceColumn: Promotion
 
 		annotation SummarizationSetBy = Automatic
 
 	column PromotionKey
-		dataType: Int64
+		dataType: int64
 		isHidden
-		summarizeBy: None
+		summarizeBy: none
 		sourceColumn: PromotionKey
 
 		annotation SummarizationSetBy = Automatic
@@ -58,24 +58,24 @@
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Start Date'
-		dataType: DateTime
-		formatString = Long Date
-		summarizeBy: None
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
 		sourceColumn: Start Date
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	partition Promotion = M
-		mode: Import
-		expression =
-			let
-			    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Promotion.csv"]),
-			    Csv = Csv.Document(Source),
-			    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
-			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PromotionKey", Int64.Type}, {"Promotion Code", type text}, {"Promotion", type text}, {"Discount", type number}, {"Promotion Type", type text}, {"Promotion Category", type text}}),
-			    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Start Date", each Date.From(DateTimeZone.From(_)), type date}, {"End Date", each Date.From(DateTimeZone.From(_)), type date}})
-			in
-			    #"Parsed Date"
+	partition Promotion = m
+		mode: import
+		source =
+				let
+				    Source = Web.Contents(#"[SourceUrl]", [RelativePath = "pbi-tools/contoso-sales-model/main/data/Promotion.csv"]),
+				    Csv = Csv.Document(Source),
+				    #"Promoted Headers" = Table.PromoteHeaders(Csv, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PromotionKey", Int64.Type}, {"Promotion Code", type text}, {"Promotion", type text}, {"Discount", type number}, {"Promotion Type", type text}, {"Promotion Category", type text}}),
+				    #"Parsed Date" = Table.TransformColumns(#"Changed Type",{{"Start Date", each Date.From(DateTimeZone.From(_)), type date}, {"End Date", each Date.From(DateTimeZone.From(_)), type date}})
+				in
+				    #"Parsed Date"
 
