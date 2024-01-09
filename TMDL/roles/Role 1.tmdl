@@ -1,8 +1,5 @@
 ﻿role 'Role 1'
 
-	member 'phil@contoso.com' = activeDirectory
-	member 'analysts@contoso.com' = group
-
 	tablePermission Customer
 		metadataPermission: read
 
@@ -11,3 +8,5 @@
 
 	tablePermission Date = [Calendar Year] > 2009
 
+	member 'phil@contoso.com' = activeDirectory
+	member 'analysts@contoso.com' = group
