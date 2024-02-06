@@ -10,6 +10,7 @@ TMDL is currently in Public Preview.
 
 | TOM Version | TMDL Release | Max CompatLevel | Date        | TE / pbi-tools | Notes |
 | ----------- | ------------ | --------------- | ----------- | -------------- | ----- |
+| 19.76.0     | Preview-10   | 1606            |  2-Feb-2024 | TBD | Minor API Change: `MetadataFormattingOptions.IndentationSize` _(was: 'IndentationLevelLength')_ |
 | 19.74.2     | Preview-9    | 1606            |  4-Jan-2024 | [2.22.0](https://github.com/TabularEditor/TabularEditor/releases/tag/2.22.0) / [1.0.0-rc.8](https://github.com/pbi-tools/pbi-tools/releases/tag/1.0.0-rc.8) |
 | 19.72.0     | Preview-8    | 1605            |  8-Dec-2023 |   | BREAKING: Dropped separate TMDL NuGet packages (merged into main TOM DLL); Serialization Options |
 | 19.69.6.2   | Preview-7    | 1605            |  6-Nov-2023 | 2.21.1 / 1.0.0-rc.7 |
