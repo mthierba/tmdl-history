@@ -10,6 +10,7 @@ TMDL is currently in Public Preview.
 
 | TOM Version | TMDL Release | Max CompatLevel | Date        | TE / pbi-tools | Notes |
 | ----------- | ------------ | --------------- | ----------- | -------------- | ----- |
+| 19.82.0     | Preview-14   | 1606            | 11-Jun-2024 | TBD |
 | 19.80.0     | Preview-13   | 1606            |  7-May-2024 | TBD |
 | 19.79.1.1   | Preview-12   | 1606            | 12-Apr-2024 | [2.24.1](https://github.com/TabularEditor/TabularEditor/releases/tag/2.24.1) / TBD |
 | 19.77.0     | Preview-11   | 1606            | 15-Mar-2024 | [2.24.0](https://github.com/TabularEditor/TabularEditor/releases/tag/2.24.0) / NA |
