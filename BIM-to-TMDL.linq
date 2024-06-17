@@ -1,10 +1,10 @@
 <Query Kind="Statements">
-  <NuGetReference Version="19.76.0">Microsoft.AnalysisServices.NetCore.retail.amd64</NuGetReference>
+  <NuGetReference Version="19.77.0">Microsoft.AnalysisServices.NetCore.retail.amd64</NuGetReference>
   <Namespace>AMO = Microsoft.AnalysisServices</Namespace>
-  <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>
-  <Namespace>TOM = Microsoft.AnalysisServices.Tabular</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Extensions</Namespace>
+  <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Tmdl</Namespace>
+  <Namespace>TOM = Microsoft.AnalysisServices.Tabular</Namespace>
 </Query>
 
 typeof(Microsoft.AnalysisServices.Tabular.TmdlSerializer).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion.Dump();
@@ -17,6 +17,7 @@ MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(M
 	.WithChildrenMetadata()
 	.WithoutRestrictedInformation()
 	.WithExpressionTrimStyle(TmdlExpressionTrimStyle.TrimTrailingWhitespaces | TmdlExpressionTrimStyle.TrimLeadingCommonWhitespaces)
+	.WithMetadataOrderHints()
 	.WithFormattingOptions(new MetadataFormattingOptionsBuilder(MetadataSerializationStyle.Tmdl)
 		.WithEncoding(Encoding.UTF8)
 		.WithNewLineStyle(NewLineStyle.WindowsStyle)
