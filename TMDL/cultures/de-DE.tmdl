@@ -1,4 +1,4 @@
-﻿culture de-DE
+﻿cultureInfo de-DE
 	translations
 		model Model
 			table Customer

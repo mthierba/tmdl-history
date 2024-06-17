@@ -1,5 +1,5 @@
 <Query Kind="Statements">
-  <NuGetReference Version="19.77.0">Microsoft.AnalysisServices.NetCore.retail.amd64</NuGetReference>
+  <NuGetReference Version="19.79.1.1">Microsoft.AnalysisServices.NetCore.retail.amd64</NuGetReference>
   <Namespace>AMO = Microsoft.AnalysisServices</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Extensions</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>

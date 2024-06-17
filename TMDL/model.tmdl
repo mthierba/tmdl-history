@@ -33,10 +33,10 @@ ref table 'Time Intelligence'
 ref table Calendar
 ref table State
 
-ref culture en-US
-ref culture de-DE
+ref role 'Role 1'
 
 ref perspective 'Perspective 1'
 
-ref role 'Role 1'
+ref cultureInfo en-US
+ref cultureInfo de-DE
 
