@@ -10,7 +10,7 @@ TMDL is currently in Public Preview.
 
 | TOM Version                                                                                             | TMDL Release                                                     | Max CompatLevel | Date        | TE / pbi-tools | Notes |
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------- | ----------- | -------------- | ----- |
-| [19.84.6](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.84.6)                            | [GA](https://github.com/mthierba/tmdl-example/pull/17)           | 1606            |  2-Jul-2024 | TBD |
+| [19.84.6](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.84.6)                            | [GA](https://github.com/mthierba/tmdl-example/pull/17)           | 1606            |  1-Aug-2024 | TBD |
 | [19.84.1](https://www.nuget.org/packages/Microsoft.AnalysisServices.NetCore.retail.amd64/19.84.1)       | [Preview-15](https://github.com/mthierba/tmdl-example/pull/16)   | 1606            |  2-Jul-2024 | [2.25.0](https://github.com/TabularEditor/TabularEditor/releases/tag/2.25) / [1.0.0](https://github.com/pbi-tools/pbi-tools/releases/tag/1.0.0) |
 | [19.82.0](https://www.nuget.org/packages/Microsoft.AnalysisServices.NetCore.retail.amd64/19.82.0)       | [Preview-14](https://github.com/mthierba/tmdl-example/pull/15)   | 1606            | 11-Jun-2024 | TBD |
 | [19.80.0](https://www.nuget.org/packages/Microsoft.AnalysisServices.NetCore.retail.amd64/19.80.0)       | [Preview-13](https://github.com/mthierba/tmdl-example/pull/14)   | 1606            |  7-May-2024 | TBD |
