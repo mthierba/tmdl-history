@@ -1,5 +1,5 @@
 <Query Kind="Statements">
-  <NuGetReference Version="19.84.10">Microsoft.AnalysisServices</NuGetReference>
+  <NuGetReference Version="19.86.2.1">Microsoft.AnalysisServices</NuGetReference>
   <Namespace>AMO = Microsoft.AnalysisServices</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Extensions</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>
@@ -15,6 +15,7 @@ var db = TOM.JsonSerializer.DeserializeDatabase(File.ReadAllText(bimPath), mode:
 
 MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(MetadataSerializationStyle.Tmdl)
 	.WithChildrenMetadata()
+	.WithInferredDataTypes()
 	.WithoutRestrictedInformation()
 	.WithExpressionTrimStyle(TmdlExpressionTrimStyle.TrimTrailingWhitespaces | TmdlExpressionTrimStyle.TrimLeadingCommonWhitespaces)
 	.WithMetadataOrderHints()
@@ -24,6 +25,10 @@ MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(M
 		.WithTabsIndentationMode()
 		.WithBaseIndentationLevel(0)
 		.WithCasingStyle(TmdlCasingStyle.CamelCase)
+		.GetOptions())
+	.WithCompatibilityOptions(new MetadataCompatibilityOptionsBuilder()
+		.WithTargetCompatibilityMode(Microsoft.AnalysisServices.CompatibilityMode.PowerBI)
+		.WithTargetCompatibilityLevel(1606)
 		.GetOptions())
 	.GetOptions();
 	
