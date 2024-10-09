@@ -15,6 +15,7 @@ var db = TOM.JsonSerializer.DeserializeDatabase(File.ReadAllText(bimPath), mode:
 
 MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(MetadataSerializationStyle.Tmdl)
 	.WithChildrenMetadata()
+	.WithInferredDataTypes()
 	.WithoutRestrictedInformation()
 	.WithExpressionTrimStyle(TmdlExpressionTrimStyle.TrimTrailingWhitespaces | TmdlExpressionTrimStyle.TrimLeadingCommonWhitespaces)
 	.WithMetadataOrderHints()
@@ -24,6 +25,10 @@ MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(M
 		.WithTabsIndentationMode()
 		.WithBaseIndentationLevel(0)
 		.WithCasingStyle(TmdlCasingStyle.CamelCase)
+		.GetOptions())
+	.WithCompatibilityOptions(new MetadataCompatibilityOptionsBuilder()
+		.WithTargetCompatibilityMode(Microsoft.AnalysisServices.CompatibilityMode.PowerBI)
+		.WithTargetCompatibilityLevel(1606)
 		.GetOptions())
 	.GetOptions();
 	
