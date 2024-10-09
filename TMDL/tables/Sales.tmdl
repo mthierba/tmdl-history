@@ -243,38 +243,30 @@
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column SalesAmount = Sales[Quantity] * Sales[Unit Price]
-		dataType: double
 		formatString: 0.00
 		lineageTag: 6c85b809-bceb-4982-a951-055e754fedbc
 		summarizeBy: sum
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column TotalProductCost = Sales[Quantity] * Sales[Unit Cost]
-		dataType: double
 		formatString: 0.00
 		lineageTag: 7118d6d5-46a3-4d52-9267-fcff6ce17e6a
 		summarizeBy: sum
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column GrossMargin = Sales[SalesAmount] - Sales[TotalProductCost]
-		dataType: double
 		formatString: 0.00
 		lineageTag: 516e4bdd-cd0d-4987-851e-30f2edaaff0a
 		summarizeBy: sum
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column GrossMarginPct = DIVIDE ( Sales[GrossMargin], Sales[SalesAmount] )
-		dataType: double
 		formatString: 0%;-0%;0%
 		lineageTag: 6a8cb3b0-8f49-4e2b-af64-a77bc59c2f52
 		summarizeBy: sum
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
