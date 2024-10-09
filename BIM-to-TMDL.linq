@@ -1,5 +1,5 @@
 <Query Kind="Statements">
-  <NuGetReference Version="19.84.6">Microsoft.AnalysisServices</NuGetReference>
+  <NuGetReference Version="19.84.10">Microsoft.AnalysisServices</NuGetReference>
   <Namespace>AMO = Microsoft.AnalysisServices</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Extensions</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>
