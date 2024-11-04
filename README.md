@@ -2,7 +2,7 @@
 
 TMDL is Microsoft's new language for defining tabular models for Analysis Services and Power BI. It targets professional developers and is designed to be human-readable and editable in any text editor. Furthermore, TMDL projects work well with source control and collaborative workflows.
 
-TMDL is currently in Public Preview.
+![NuGet Version](https://img.shields.io/nuget/v/Microsoft.AnalysisServices?style=flat-square&label=Microsoft.AnalysisServices)
 
 * [TMDL Overview](https://pbi.onl/tmdl-docs)
 
