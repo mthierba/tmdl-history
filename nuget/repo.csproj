@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AnalysisServices" Version="19.86.2.1" />
+    <PackageReference Include="Microsoft.AnalysisServices" Version="19.86.6" />
   </ItemGroup>
 
 </Project>
