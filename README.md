@@ -10,6 +10,7 @@ TMDL is Microsoft's new language for defining tabular models for Analysis Servic
 
 | TOM Version                                                                                             | TMDL Release                                                     | Max CompatLevel | Date        | TE / pbi-tools | Notes |
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------- | ----------- | -------------- | ----- |
+| [19.87.2](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.87.2)                            | [Dec-2024](https://github.com/mthierba/tmdl-history/pull/23)     | 1608            |  2-Dec-2024 | TBD |
 | [19.86.6](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.86.6)                            | [Nov-2024](https://github.com/mthierba/tmdl-history/pull/22)     | 1608            |  4-Nov-2024 | TBD |
 | [19.86.2.1](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.86.2.1)                        | [Oct-2024](https://github.com/mthierba/tmdl-history/pull/19)     | 1608            |  9-Oct-2024 | TBD | Adds `MetadataSerializationOptions.IncludeInferredDataTypes` |
 | [19.84.10](https://www.nuget.org/packages/Microsoft.AnalysisServices/19.84.10)                          | [Sep-2024](https://github.com/mthierba/tmdl-history/pull/18)     | 1608            |  3-Sep-2024 | TBD | Adds `DataBindingHint` (1608) |
