@@ -1,5 +1,5 @@
 <Query Kind="Statements">
-  <NuGetReference Version="19.86.6">Microsoft.AnalysisServices</NuGetReference>
+  <NuGetReference Version="19.87.2">Microsoft.AnalysisServices</NuGetReference>
   <Namespace>AMO = Microsoft.AnalysisServices</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Extensions</Namespace>
   <Namespace>Microsoft.AnalysisServices.Tabular.Serialization</Namespace>
@@ -31,9 +31,9 @@ MetadataSerializationOptions options = new MetadataSerializationOptionsBuilder(M
 		.WithTargetCompatibilityLevel(1606)
 		.GetOptions())
 	.GetOptions();
-	
+
 options.Dump("Serialization Options");
-		
+
 TOM.TmdlSerializer.SerializeDatabaseToFolder(db, targetPath, options);
 
 // Verify:
